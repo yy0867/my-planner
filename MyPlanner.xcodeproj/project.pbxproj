@@ -1,0 +1,959 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A54C28E0277CACDE008D256C /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C28DF277CACDE008D256C /* Plan.swift */; };
+		A54C28E3277CAF68008D256C /* FetchPlanListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C28E2277CAF68008D256C /* FetchPlanListRepository.swift */; };
+		A54C28E6277CB1B7008D256C /* DefaultFetchPlanListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C28E5277CB1B7008D256C /* DefaultFetchPlanListRepository.swift */; };
+		A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */; };
+		A599BECB277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BECA277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift */; };
+		A599BECE277CB4DC005F5B1C /* PlanListFetchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BECD277CB4DC005F5B1C /* PlanListFetchStorage.swift */; };
+		A599BED2277CB64C005F5B1C /* PlanEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED1277CB64C005F5B1C /* PlanEntity.swift */; };
+		A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED3277CB686005F5B1C /* Identifiable.swift */; };
+		A599BED7277CB7F2005F5B1C /* PlanEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED6277CB7F2005F5B1C /* PlanEntityMapper.swift */; };
+		A599BEDE277CBF76005F5B1C /* SavePlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEDD277CBF76005F5B1C /* SavePlanRepository.swift */; };
+		A599BEE0277CBFA8005F5B1C /* DefaultSavePlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEDF277CBFA8005F5B1C /* DefaultSavePlanRepository.swift */; };
+		A599BEE2277CBFD1005F5B1C /* SavePlanStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEE1277CBFD1005F5B1C /* SavePlanStorage.swift */; };
+		A599BEE4277CC019005F5B1C /* RealmSavePlanStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEE3277CC019005F5B1C /* RealmSavePlanStorage.swift */; };
+		A599BEE9277CC3F5005F5B1C /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEE8277CC3F5005F5B1C /* DTO.swift */; };
+		A599BEEE277CC5E5005F5B1C /* RealmStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEED277CC5E5005F5B1C /* RealmStorageTest.swift */; };
+		A599BEF1277CC661005F5B1C /* Plan+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEF0277CC661005F5B1C /* Plan+Stub.swift */; };
+		A5BB59D2277CA66F0058240E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59D1277CA66F0058240E /* AppDelegate.swift */; };
+		A5BB59D4277CA66F0058240E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59D3277CA66F0058240E /* SceneDelegate.swift */; };
+		A5BB59D6277CA66F0058240E /* PlanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59D5277CA66F0058240E /* PlanListViewController.swift */; };
+		A5BB59DB277CA6700058240E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5BB59DA277CA6700058240E /* Assets.xcassets */; };
+		A5BB59DE277CA6700058240E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BB59DC277CA6700058240E /* LaunchScreen.storyboard */; };
+		A5BB59E9277CA6700058240E /* MyPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59E8277CA6700058240E /* MyPlannerTests.swift */; };
+		A5BB59F3277CA6700058240E /* MyPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59F2277CA6700058240E /* MyPlannerUITests.swift */; };
+		A5BB59F5277CA6700058240E /* MyPlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59F4277CA6700058240E /* MyPlannerUITestsLaunchTests.swift */; };
+		C1B2A52B70BCB72AC2C05009 /* Pods_MyPlanner_MyPlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88DE7D24ADC41878415831AD /* Pods_MyPlanner_MyPlannerUITests.framework */; };
+		E373F58DA98C3499D001AB60 /* Pods_MyPlannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95ED9BAE8A77861518A0505 /* Pods_MyPlannerTests.framework */; };
+		F52CF784570B81ED3709FFD1 /* Pods_MyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA154A25860806819C0E597 /* Pods_MyPlanner.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5BB59E5277CA6700058240E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5BB59C6277CA66F0058240E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5BB59CD277CA66F0058240E;
+			remoteInfo = MyPlanner;
+		};
+		A5BB59EF277CA6700058240E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5BB59C6277CA66F0058240E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5BB59CD277CA66F0058240E;
+			remoteInfo = MyPlanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1EA154A25860806819C0E597 /* Pods_MyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		253D431C781A5D0E58C6749A /* Pods-MyPlanner-MyPlannerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner-MyPlannerUITests.release.xcconfig"; path = "Target Support Files/Pods-MyPlanner-MyPlannerUITests/Pods-MyPlanner-MyPlannerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		705A68EC8FDB65DED3EAB58B /* Pods-MyPlannerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlannerTests.release.xcconfig"; path = "Target Support Files/Pods-MyPlannerTests/Pods-MyPlannerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7615D13079F9EFF8943330EA /* Pods-MyPlannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlannerTests.debug.xcconfig"; path = "Target Support Files/Pods-MyPlannerTests/Pods-MyPlannerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		79C1A4333318B40E891BDCA9 /* Pods-MyPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner.debug.xcconfig"; path = "Target Support Files/Pods-MyPlanner/Pods-MyPlanner.debug.xcconfig"; sourceTree = "<group>"; };
+		7E7A5910B98A62F4A4E070FF /* Pods-MyPlanner-MyPlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner-MyPlannerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyPlanner-MyPlannerUITests/Pods-MyPlanner-MyPlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		88DE7D24ADC41878415831AD /* Pods_MyPlanner_MyPlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlanner_MyPlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A54C28DF277CACDE008D256C /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		A54C28E2277CAF68008D256C /* FetchPlanListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlanListRepository.swift; sourceTree = "<group>"; };
+		A54C28E5277CB1B7008D256C /* DefaultFetchPlanListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchPlanListRepository.swift; sourceTree = "<group>"; };
+		A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		A599BECA277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlanListFetchStorage.swift; sourceTree = "<group>"; };
+		A599BECD277CB4DC005F5B1C /* PlanListFetchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListFetchStorage.swift; sourceTree = "<group>"; };
+		A599BED1277CB64C005F5B1C /* PlanEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanEntity.swift; sourceTree = "<group>"; };
+		A599BED3277CB686005F5B1C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		A599BED6277CB7F2005F5B1C /* PlanEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanEntityMapper.swift; sourceTree = "<group>"; };
+		A599BEDD277CBF76005F5B1C /* SavePlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePlanRepository.swift; sourceTree = "<group>"; };
+		A599BEDF277CBFA8005F5B1C /* DefaultSavePlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSavePlanRepository.swift; sourceTree = "<group>"; };
+		A599BEE1277CBFD1005F5B1C /* SavePlanStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePlanStorage.swift; sourceTree = "<group>"; };
+		A599BEE3277CC019005F5B1C /* RealmSavePlanStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSavePlanStorage.swift; sourceTree = "<group>"; };
+		A599BEE8277CC3F5005F5B1C /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
+		A599BEED277CC5E5005F5B1C /* RealmStorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageTest.swift; sourceTree = "<group>"; };
+		A599BEF0277CC661005F5B1C /* Plan+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+Stub.swift"; sourceTree = "<group>"; };
+		A5BB59CE277CA66F0058240E /* MyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BB59D1277CA66F0058240E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A5BB59D3277CA66F0058240E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A5BB59D5277CA66F0058240E /* PlanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListViewController.swift; sourceTree = "<group>"; };
+		A5BB59DA277CA6700058240E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5BB59DD277CA6700058240E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5BB59DF277CA6700058240E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5BB59E4277CA6700058240E /* MyPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BB59E8277CA6700058240E /* MyPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerTests.swift; sourceTree = "<group>"; };
+		A5BB59EE277CA6700058240E /* MyPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BB59F2277CA6700058240E /* MyPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerUITests.swift; sourceTree = "<group>"; };
+		A5BB59F4277CA6700058240E /* MyPlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B95ED9BAE8A77861518A0505 /* Pods_MyPlannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB252648AC3E634C9BA6EDA1 /* Pods-MyPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner.release.xcconfig"; path = "Target Support Files/Pods-MyPlanner/Pods-MyPlanner.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5BB59CB277CA66F0058240E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F52CF784570B81ED3709FFD1 /* Pods_MyPlanner.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BB59E1277CA6700058240E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E373F58DA98C3499D001AB60 /* Pods_MyPlannerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BB59EB277CA6700058240E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1B2A52B70BCB72AC2C05009 /* Pods_MyPlanner_MyPlannerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6DD39E46AC59EBDBEABC8EDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EA154A25860806819C0E597 /* Pods_MyPlanner.framework */,
+				88DE7D24ADC41878415831AD /* Pods_MyPlanner_MyPlannerUITests.framework */,
+				B95ED9BAE8A77861518A0505 /* Pods_MyPlannerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A54C28D4277CABA6008D256C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A5BB59D1277CA66F0058240E /* AppDelegate.swift */,
+				A5BB59D3277CA66F0058240E /* SceneDelegate.swift */,
+				A5BB59DC277CA6700058240E /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A54C28D5277CABAA008D256C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A54C28DE277CAC91008D256C /* PlanListView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A54C28D8277CABDB008D256C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A54C28E4277CB17D008D256C /* Repository */,
+				A54C28DA277CABE1008D256C /* Entity */,
+				A54C28E7277CB21E008D256C /* PersistentStorage */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A54C28D9277CABDF008D256C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A54C28DC277CAC60008D256C /* UseCase */,
+				A54C28DD277CAC71008D256C /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A54C28DA277CABE1008D256C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A54C28DF277CACDE008D256C /* Plan.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A54C28DB277CAC0A008D256C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5BB59DA277CA6700058240E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A54C28DC277CAC60008D256C /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A54C28DD277CAC71008D256C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A54C28E2277CAF68008D256C /* FetchPlanListRepository.swift */,
+				A599BEDD277CBF76005F5B1C /* SavePlanRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A54C28DE277CAC91008D256C /* PlanListView */ = {
+			isa = PBXGroup;
+			children = (
+				A5BB59D5277CA66F0058240E /* PlanListViewController.swift */,
+			);
+			path = PlanListView;
+			sourceTree = "<group>";
+		};
+		A54C28E4277CB17D008D256C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A54C28E5277CB1B7008D256C /* DefaultFetchPlanListRepository.swift */,
+				A599BEDF277CBFA8005F5B1C /* DefaultSavePlanRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A54C28E7277CB21E008D256C /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				A599BECC277CB4D3005F5B1C /* Protocol */,
+				A599BEC9277CB479005F5B1C /* Realm */,
+			);
+			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		A599BEC9277CB479005F5B1C /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				A599BED0277CB633005F5B1C /* Entity */,
+				A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */,
+				A599BECA277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift */,
+				A599BEE3277CC019005F5B1C /* RealmSavePlanStorage.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		A599BECC277CB4D3005F5B1C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A599BECD277CB4DC005F5B1C /* PlanListFetchStorage.swift */,
+				A599BEE1277CBFD1005F5B1C /* SavePlanStorage.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A599BED0277CB633005F5B1C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A599BED8277CB866005F5B1C /* Mapper */,
+				A599BED1277CB64C005F5B1C /* PlanEntity.swift */,
+				A599BED3277CB686005F5B1C /* Identifiable.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A599BED8277CB866005F5B1C /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				A599BED6277CB7F2005F5B1C /* PlanEntityMapper.swift */,
+				A599BEE8277CC3F5005F5B1C /* DTO.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		A599BEEA277CC5C3005F5B1C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A599BEEB277CC5C9005F5B1C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A599BEED277CC5E5005F5B1C /* RealmStorageTest.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A599BEEF277CC65A005F5B1C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A599BEF0277CC661005F5B1C /* Plan+Stub.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		A5BB59C5277CA66F0058240E = {
+			isa = PBXGroup;
+			children = (
+				A5BB59D0277CA66F0058240E /* MyPlanner */,
+				A5BB59E7277CA6700058240E /* MyPlannerTests */,
+				A5BB59F1277CA6700058240E /* MyPlannerUITests */,
+				A5BB59CF277CA66F0058240E /* Products */,
+				DE6FF083B6E67B68970D80F6 /* Pods */,
+				6DD39E46AC59EBDBEABC8EDA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A5BB59CF277CA66F0058240E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5BB59CE277CA66F0058240E /* MyPlanner.app */,
+				A5BB59E4277CA6700058240E /* MyPlannerTests.xctest */,
+				A5BB59EE277CA6700058240E /* MyPlannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5BB59D0277CA66F0058240E /* MyPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				A5BB59DF277CA6700058240E /* Info.plist */,
+				A54C28D5277CABAA008D256C /* Presentation */,
+				A54C28D9277CABDF008D256C /* Domain */,
+				A54C28D8277CABDB008D256C /* Data */,
+				A54C28D4277CABA6008D256C /* Application */,
+				A54C28DB277CAC0A008D256C /* Resources */,
+			);
+			path = MyPlanner;
+			sourceTree = "<group>";
+		};
+		A5BB59E7277CA6700058240E /* MyPlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A599BEEA277CC5C3005F5B1C /* Domain */,
+				A599BEEB277CC5C9005F5B1C /* Data */,
+				A599BEEF277CC65A005F5B1C /* Mocks */,
+				A5BB59E8277CA6700058240E /* MyPlannerTests.swift */,
+			);
+			path = MyPlannerTests;
+			sourceTree = "<group>";
+		};
+		A5BB59F1277CA6700058240E /* MyPlannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A5BB59F2277CA6700058240E /* MyPlannerUITests.swift */,
+				A5BB59F4277CA6700058240E /* MyPlannerUITestsLaunchTests.swift */,
+			);
+			path = MyPlannerUITests;
+			sourceTree = "<group>";
+		};
+		DE6FF083B6E67B68970D80F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79C1A4333318B40E891BDCA9 /* Pods-MyPlanner.debug.xcconfig */,
+				DB252648AC3E634C9BA6EDA1 /* Pods-MyPlanner.release.xcconfig */,
+				7E7A5910B98A62F4A4E070FF /* Pods-MyPlanner-MyPlannerUITests.debug.xcconfig */,
+				253D431C781A5D0E58C6749A /* Pods-MyPlanner-MyPlannerUITests.release.xcconfig */,
+				7615D13079F9EFF8943330EA /* Pods-MyPlannerTests.debug.xcconfig */,
+				705A68EC8FDB65DED3EAB58B /* Pods-MyPlannerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5BB59CD277CA66F0058240E /* MyPlanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5BB59F8277CA6700058240E /* Build configuration list for PBXNativeTarget "MyPlanner" */;
+			buildPhases = (
+				BCC16DFC17A161EF2217ECE0 /* [CP] Check Pods Manifest.lock */,
+				A5BB59CA277CA66F0058240E /* Sources */,
+				A5BB59CB277CA66F0058240E /* Frameworks */,
+				A5BB59CC277CA66F0058240E /* Resources */,
+				FF0C330CFE787639F7D07684 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyPlanner;
+			productName = MyPlanner;
+			productReference = A5BB59CE277CA66F0058240E /* MyPlanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5BB59E3277CA6700058240E /* MyPlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5BB59FB277CA6700058240E /* Build configuration list for PBXNativeTarget "MyPlannerTests" */;
+			buildPhases = (
+				2F80AAE1154BF971184ECF0F /* [CP] Check Pods Manifest.lock */,
+				A5BB59E0277CA6700058240E /* Sources */,
+				A5BB59E1277CA6700058240E /* Frameworks */,
+				A5BB59E2277CA6700058240E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5BB59E6277CA6700058240E /* PBXTargetDependency */,
+			);
+			name = MyPlannerTests;
+			productName = MyPlannerTests;
+			productReference = A5BB59E4277CA6700058240E /* MyPlannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A5BB59ED277CA6700058240E /* MyPlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5BB59FE277CA6700058240E /* Build configuration list for PBXNativeTarget "MyPlannerUITests" */;
+			buildPhases = (
+				85E4BC3C045213EA2DE19011 /* [CP] Check Pods Manifest.lock */,
+				A5BB59EA277CA6700058240E /* Sources */,
+				A5BB59EB277CA6700058240E /* Frameworks */,
+				A5BB59EC277CA6700058240E /* Resources */,
+				18408EBC09E10A3CBA704509 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5BB59F0277CA6700058240E /* PBXTargetDependency */,
+			);
+			name = MyPlannerUITests;
+			productName = MyPlannerUITests;
+			productReference = A5BB59EE277CA6700058240E /* MyPlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5BB59C6277CA66F0058240E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					A5BB59CD277CA66F0058240E = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					A5BB59E3277CA6700058240E = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = A5BB59CD277CA66F0058240E;
+					};
+					A5BB59ED277CA6700058240E = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = A5BB59CD277CA66F0058240E;
+					};
+				};
+			};
+			buildConfigurationList = A5BB59C9277CA66F0058240E /* Build configuration list for PBXProject "MyPlanner" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5BB59C5277CA66F0058240E;
+			productRefGroup = A5BB59CF277CA66F0058240E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5BB59CD277CA66F0058240E /* MyPlanner */,
+				A5BB59E3277CA6700058240E /* MyPlannerTests */,
+				A5BB59ED277CA6700058240E /* MyPlannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5BB59CC277CA66F0058240E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5BB59DE277CA6700058240E /* LaunchScreen.storyboard in Resources */,
+				A5BB59DB277CA6700058240E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BB59E2277CA6700058240E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BB59EC277CA6700058240E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18408EBC09E10A3CBA704509 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlanner-MyPlannerUITests/Pods-MyPlanner-MyPlannerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlanner-MyPlannerUITests/Pods-MyPlanner-MyPlannerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyPlanner-MyPlannerUITests/Pods-MyPlanner-MyPlannerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F80AAE1154BF971184ECF0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyPlannerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85E4BC3C045213EA2DE19011 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyPlanner-MyPlannerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCC16DFC17A161EF2217ECE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF0C330CFE787639F7D07684 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlanner/Pods-MyPlanner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlanner/Pods-MyPlanner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyPlanner/Pods-MyPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5BB59CA277CA66F0058240E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A599BEE4277CC019005F5B1C /* RealmSavePlanStorage.swift in Sources */,
+				A599BEDE277CBF76005F5B1C /* SavePlanRepository.swift in Sources */,
+				A54C28E3277CAF68008D256C /* FetchPlanListRepository.swift in Sources */,
+				A54C28E0277CACDE008D256C /* Plan.swift in Sources */,
+				A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */,
+				A54C28E6277CB1B7008D256C /* DefaultFetchPlanListRepository.swift in Sources */,
+				A599BED2277CB64C005F5B1C /* PlanEntity.swift in Sources */,
+				A5BB59D6277CA66F0058240E /* PlanListViewController.swift in Sources */,
+				A599BECB277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift in Sources */,
+				A599BEE0277CBFA8005F5B1C /* DefaultSavePlanRepository.swift in Sources */,
+				A599BECE277CB4DC005F5B1C /* PlanListFetchStorage.swift in Sources */,
+				A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */,
+				A599BEE9277CC3F5005F5B1C /* DTO.swift in Sources */,
+				A5BB59D2277CA66F0058240E /* AppDelegate.swift in Sources */,
+				A5BB59D4277CA66F0058240E /* SceneDelegate.swift in Sources */,
+				A599BED7277CB7F2005F5B1C /* PlanEntityMapper.swift in Sources */,
+				A599BEE2277CBFD1005F5B1C /* SavePlanStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BB59E0277CA6700058240E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A599BEF1277CC661005F5B1C /* Plan+Stub.swift in Sources */,
+				A5BB59E9277CA6700058240E /* MyPlannerTests.swift in Sources */,
+				A599BEEE277CC5E5005F5B1C /* RealmStorageTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BB59EA277CA6700058240E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5BB59F3277CA6700058240E /* MyPlannerUITests.swift in Sources */,
+				A5BB59F5277CA6700058240E /* MyPlannerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5BB59E6277CA6700058240E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5BB59CD277CA66F0058240E /* MyPlanner */;
+			targetProxy = A5BB59E5277CA6700058240E /* PBXContainerItemProxy */;
+		};
+		A5BB59F0277CA6700058240E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5BB59CD277CA66F0058240E /* MyPlanner */;
+			targetProxy = A5BB59EF277CA6700058240E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A5BB59DC277CA6700058240E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5BB59DD277CA6700058240E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5BB59F6277CA6700058240E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A5BB59F7277CA6700058240E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A5BB59F9277CA6700058240E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79C1A4333318B40E891BDCA9 /* Pods-MyPlanner.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyPlanner/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.MyPlanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5BB59FA277CA6700058240E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB252648AC3E634C9BA6EDA1 /* Pods-MyPlanner.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyPlanner/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.MyPlanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A5BB59FC277CA6700058240E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7615D13079F9EFF8943330EA /* Pods-MyPlannerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.MyPlannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPlanner.app/MyPlanner";
+			};
+			name = Debug;
+		};
+		A5BB59FD277CA6700058240E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 705A68EC8FDB65DED3EAB58B /* Pods-MyPlannerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.MyPlannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPlanner.app/MyPlanner";
+			};
+			name = Release;
+		};
+		A5BB59FF277CA6700058240E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E7A5910B98A62F4A4E070FF /* Pods-MyPlanner-MyPlannerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.MyPlannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyPlanner;
+			};
+			name = Debug;
+		};
+		A5BB5A00277CA6700058240E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 253D431C781A5D0E58C6749A /* Pods-MyPlanner-MyPlannerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.MyPlannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyPlanner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5BB59C9277CA66F0058240E /* Build configuration list for PBXProject "MyPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5BB59F6277CA6700058240E /* Debug */,
+				A5BB59F7277CA6700058240E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5BB59F8277CA6700058240E /* Build configuration list for PBXNativeTarget "MyPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5BB59F9277CA6700058240E /* Debug */,
+				A5BB59FA277CA6700058240E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5BB59FB277CA6700058240E /* Build configuration list for PBXNativeTarget "MyPlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5BB59FC277CA6700058240E /* Debug */,
+				A5BB59FD277CA6700058240E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5BB59FE277CA6700058240E /* Build configuration list for PBXNativeTarget "MyPlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5BB59FF277CA6700058240E /* Debug */,
+				A5BB5A00277CA6700058240E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5BB59C6277CA66F0058240E /* Project object */;
+}
