@@ -10,13 +10,13 @@ import Foundation
 protocol PlanRepository {
     
     func create(dto: PlanDto.Create,
-                completion: (Result<PlanDto.Result, Error>) -> Void)
+                completion: (Result<Plan, Error>) -> Void)
     
     func search(dto: PlanDto.Search,
-              completion: (Result<[PlanDto.Result], Error>) -> Void)
+              completion: (Result<[Plan], Error>) -> Void)
     
     func update(dto: PlanDto.Update,
-                completion: (Result<PlanDto.Result, Error>) -> Void)
+                completion: (Result<Plan, Error>) -> Void)
     
     func delete(id: Plan.Identifier,
                 completion: (Result<Void, Error>) -> Void)

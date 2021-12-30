@@ -14,6 +14,18 @@
 		A52950CC277DDEC700334C56 /* DefaultPlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950CB277DDEC700334C56 /* DefaultPlanRepository.swift */; };
 		A52950CE277DDEF700334C56 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950CD277DDEF700334C56 /* Storage.swift */; };
 		A52950D1277DDFA300334C56 /* PlanRealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950D0277DDFA300334C56 /* PlanRealmStorage.swift */; };
+		A52950D3277DEE1D00334C56 /* FetchPlanListByDateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950D2277DEE1D00334C56 /* FetchPlanListByDateUseCase.swift */; };
+		A52950D5277DF1D100334C56 /* RealmStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950D4277DF1D100334C56 /* RealmStorageTests.swift */; };
+		A52950D7277DF62200334C56 /* Date+DateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950D6277DF62200334C56 /* Date+DateComponent.swift */; };
+		A52950D9277DF89000334C56 /* PlanRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950D8277DF89000334C56 /* PlanRepositoryTests.swift */; };
+		A52950DC277DFB9E00334C56 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950DB277DFB9E00334C56 /* XCTestCase.swift */; };
+		A52950DE277DFEA600334C56 /* MyPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950DD277DFEA600334C56 /* MyPlannerUITests.swift */; };
+		A52950E0277E0FBC00334C56 /* AddPlanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950DF277E0FBC00334C56 /* AddPlanUseCase.swift */; };
+		A52950E3277E118900334C56 /* FetchPlanListByDateUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950E2277E118900334C56 /* FetchPlanListByDateUseCaseTests.swift */; };
+		A52950E5277E173C00334C56 /* PlanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950E4277E173C00334C56 /* PlanListView.swift */; };
+		A52950EB277E2D3800334C56 /* PlanListTitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950EA277E2D3800334C56 /* PlanListTitleBar.swift */; };
+		A52950ED277E2D7100334C56 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950EC277E2D7100334C56 /* CustomView.swift */; };
+		A52950F1277E2DFB00334C56 /* PlanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950F0277E2DFB00334C56 /* PlanListViewModel.swift */; };
 		A54C28E0277CACDE008D256C /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C28DF277CACDE008D256C /* Plan.swift */; };
 		A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */; };
 		A599BED2277CB64C005F5B1C /* RealmPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED1277CB64C005F5B1C /* RealmPlan.swift */; };
@@ -25,8 +37,6 @@
 		A5BB59DB277CA6700058240E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5BB59DA277CA6700058240E /* Assets.xcassets */; };
 		A5BB59DE277CA6700058240E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BB59DC277CA6700058240E /* LaunchScreen.storyboard */; };
 		A5BB59E9277CA6700058240E /* MyPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59E8277CA6700058240E /* MyPlannerTests.swift */; };
-		A5BB59F3277CA6700058240E /* MyPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59F2277CA6700058240E /* MyPlannerUITests.swift */; };
-		A5BB59F5277CA6700058240E /* MyPlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59F4277CA6700058240E /* MyPlannerUITestsLaunchTests.swift */; };
 		C1B2A52B70BCB72AC2C05009 /* Pods_MyPlanner_MyPlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88DE7D24ADC41878415831AD /* Pods_MyPlanner_MyPlannerUITests.framework */; };
 		E373F58DA98C3499D001AB60 /* Pods_MyPlannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95ED9BAE8A77861518A0505 /* Pods_MyPlannerTests.framework */; };
 		F52CF784570B81ED3709FFD1 /* Pods_MyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA154A25860806819C0E597 /* Pods_MyPlanner.framework */; };
@@ -64,6 +74,18 @@
 		A52950CB277DDEC700334C56 /* DefaultPlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlanRepository.swift; sourceTree = "<group>"; };
 		A52950CD277DDEF700334C56 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A52950D0277DDFA300334C56 /* PlanRealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRealmStorage.swift; sourceTree = "<group>"; };
+		A52950D2277DEE1D00334C56 /* FetchPlanListByDateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlanListByDateUseCase.swift; sourceTree = "<group>"; };
+		A52950D4277DF1D100334C56 /* RealmStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageTests.swift; sourceTree = "<group>"; };
+		A52950D6277DF62200334C56 /* Date+DateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateComponent.swift"; sourceTree = "<group>"; };
+		A52950D8277DF89000334C56 /* PlanRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRepositoryTests.swift; sourceTree = "<group>"; };
+		A52950DB277DFB9E00334C56 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		A52950DD277DFEA600334C56 /* MyPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerUITests.swift; sourceTree = "<group>"; };
+		A52950DF277E0FBC00334C56 /* AddPlanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanUseCase.swift; sourceTree = "<group>"; };
+		A52950E2277E118900334C56 /* FetchPlanListByDateUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlanListByDateUseCaseTests.swift; sourceTree = "<group>"; };
+		A52950E4277E173C00334C56 /* PlanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListView.swift; sourceTree = "<group>"; };
+		A52950EA277E2D3800334C56 /* PlanListTitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListTitleBar.swift; sourceTree = "<group>"; };
+		A52950EC277E2D7100334C56 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		A52950F0277E2DFB00334C56 /* PlanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListViewModel.swift; sourceTree = "<group>"; };
 		A54C28DF277CACDE008D256C /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		A599BED1277CB64C005F5B1C /* RealmPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlan.swift; sourceTree = "<group>"; };
@@ -79,8 +101,6 @@
 		A5BB59E4277CA6700058240E /* MyPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BB59E8277CA6700058240E /* MyPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerTests.swift; sourceTree = "<group>"; };
 		A5BB59EE277CA6700058240E /* MyPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5BB59F2277CA6700058240E /* MyPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerUITests.swift; sourceTree = "<group>"; };
-		A5BB59F4277CA6700058240E /* MyPlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B95ED9BAE8A77861518A0505 /* Pods_MyPlannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB252648AC3E634C9BA6EDA1 /* Pods-MyPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner.release.xcconfig"; path = "Target Support Files/Pods-MyPlanner/Pods-MyPlanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,13 +143,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A52950C0277DB0F100334C56 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		A52950C1277DD80F00334C56 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,31 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		A52950DA277DFB8F00334C56 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				A52950DB277DFB9E00334C56 /* XCTestCase.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		A52950E1277E117C00334C56 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				A52950E2277E118900334C56 /* FetchPlanListByDateUseCaseTests.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A52950E9277E2D1D00334C56 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A52950EA277E2D3800334C56 /* PlanListTitleBar.swift */,
+				A52950EC277E2D7100334C56 /* CustomView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		A54C28D4277CABA6008D256C /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +208,7 @@
 		A54C28D5277CABAA008D256C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A52950E9277E2D1D00334C56 /* Custom */,
 				A54C28DE277CAC91008D256C /* PlanListView */,
 			);
 			path = Presentation;
@@ -199,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				A54C28DF277CACDE008D256C /* Plan.swift */,
+				A52950D6277DF62200334C56 /* Date+DateComponent.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -214,7 +254,8 @@
 		A54C28DC277CAC60008D256C /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				A52950C0277DB0F100334C56 /* Protocol */,
+				A52950D2277DEE1D00334C56 /* FetchPlanListByDateUseCase.swift */,
+				A52950DF277E0FBC00334C56 /* AddPlanUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -231,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				A5BB59D5277CA66F0058240E /* PlanListViewController.swift */,
+				A52950E4277E173C00334C56 /* PlanListView.swift */,
+				A52950F0277E2DFB00334C56 /* PlanListViewModel.swift */,
 			);
 			path = PlanListView;
 			sourceTree = "<group>";
@@ -281,6 +324,7 @@
 		A599BEEA277CC5C3005F5B1C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				A52950E1277E117C00334C56 /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -288,6 +332,8 @@
 		A599BEEB277CC5C9005F5B1C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A52950D4277DF1D100334C56 /* RealmStorageTests.swift */,
+				A52950D8277DF89000334C56 /* PlanRepositoryTests.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -341,6 +387,7 @@
 				A599BEEA277CC5C3005F5B1C /* Domain */,
 				A599BEEB277CC5C9005F5B1C /* Data */,
 				A599BEEF277CC65A005F5B1C /* Mocks */,
+				A52950DA277DFB8F00334C56 /* Infrastructure */,
 				A5BB59E8277CA6700058240E /* MyPlannerTests.swift */,
 			);
 			path = MyPlannerTests;
@@ -349,8 +396,7 @@
 		A5BB59F1277CA6700058240E /* MyPlannerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A5BB59F2277CA6700058240E /* MyPlannerUITests.swift */,
-				A5BB59F4277CA6700058240E /* MyPlannerUITestsLaunchTests.swift */,
+				A52950DD277DFEA600334C56 /* MyPlannerUITests.swift */,
 			);
 			path = MyPlannerUITests;
 			sourceTree = "<group>";
@@ -398,6 +444,7 @@
 				A5BB59E0277CA6700058240E /* Sources */,
 				A5BB59E1277CA6700058240E /* Frameworks */,
 				A5BB59E2277CA6700058240E /* Resources */,
+				70F06B13CF4E4F7030EF5A15 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,6 +495,7 @@
 					};
 					A5BB59ED277CA6700058240E = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = A5BB59CD277CA66F0058240E;
 					};
 				};
@@ -538,6 +586,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		70F06B13CF4E4F7030EF5A15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlannerTests/Pods-MyPlannerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlannerTests/Pods-MyPlannerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyPlannerTests/Pods-MyPlannerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		85E4BC3C045213EA2DE19011 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -607,19 +672,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54C28E0277CACDE008D256C /* Plan.swift in Sources */,
+				A52950F1277E2DFB00334C56 /* PlanListViewModel.swift in Sources */,
 				A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */,
 				A52950CC277DDEC700334C56 /* DefaultPlanRepository.swift in Sources */,
 				A599BED2277CB64C005F5B1C /* RealmPlan.swift in Sources */,
 				A52950C3277DD81B00334C56 /* PlanDto.swift in Sources */,
+				A52950ED277E2D7100334C56 /* CustomView.swift in Sources */,
 				A5BB59D6277CA66F0058240E /* PlanListViewController.swift in Sources */,
+				A52950D3277DEE1D00334C56 /* FetchPlanListByDateUseCase.swift in Sources */,
 				A52950C6277DDB6500334C56 /* PlanDtoMapper.swift in Sources */,
 				A52950C8277DDB6D00334C56 /* DtoMapper.swift in Sources */,
+				A52950D7277DF62200334C56 /* Date+DateComponent.swift in Sources */,
 				A52950D1277DDFA300334C56 /* PlanRealmStorage.swift in Sources */,
 				A52950CA277DDD6300334C56 /* PlanRepository.swift in Sources */,
 				A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */,
 				A5BB59D2277CA66F0058240E /* AppDelegate.swift in Sources */,
 				A5BB59D4277CA66F0058240E /* SceneDelegate.swift in Sources */,
 				A52950CE277DDEF700334C56 /* Storage.swift in Sources */,
+				A52950E0277E0FBC00334C56 /* AddPlanUseCase.swift in Sources */,
+				A52950E5277E173C00334C56 /* PlanListView.swift in Sources */,
+				A52950EB277E2D3800334C56 /* PlanListTitleBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,6 +700,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A599BEF1277CC661005F5B1C /* Plan+Stub.swift in Sources */,
+				A52950D9277DF89000334C56 /* PlanRepositoryTests.swift in Sources */,
+				A52950E3277E118900334C56 /* FetchPlanListByDateUseCaseTests.swift in Sources */,
+				A52950D5277DF1D100334C56 /* RealmStorageTests.swift in Sources */,
+				A52950DC277DFB9E00334C56 /* XCTestCase.swift in Sources */,
 				A5BB59E9277CA6700058240E /* MyPlannerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,8 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5BB59F3277CA6700058240E /* MyPlannerUITests.swift in Sources */,
-				A5BB59F5277CA6700058240E /* MyPlannerUITestsLaunchTests.swift in Sources */,
+				A52950DE277DFEA600334C56 /* MyPlannerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,14 +964,21 @@
 			baseConfigurationReference = 7E7A5910B98A62F4A4E070FF /* Pods-MyPlanner-MyPlannerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.MyPlannerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MyPlanner;
@@ -908,10 +990,16 @@
 			baseConfigurationReference = 253D431C781A5D0E58C6749A /* Pods-MyPlanner-MyPlannerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.MyPlannerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

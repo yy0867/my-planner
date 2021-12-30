@@ -9,6 +9,8 @@ import Foundation
 
 protocol Storage {
     
+    var dtoMapper: PlanDtoMapper { get }
+    
     func create(dto: PlanDto.Create,
                 completion: (Result<PlanDto.Result, Error>) -> Void)
     

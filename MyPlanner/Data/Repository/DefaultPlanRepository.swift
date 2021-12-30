@@ -10,24 +10,53 @@ import Foundation
 class DefaultPlanRepository: PlanRepository {
     
     let storage: Storage
+    let dtoMapper: PlanDtoMapper
     
     init(storage: Storage) {
         self.storage = storage
+        self.dtoMapper = storage.dtoMapper
     }
     
     func create(dto: PlanDto.Create,
-                completion: (Result<PlanDto.Result, Error>) -> Void) {
-        storage.create(dto: dto, completion: completion)
+                completion: (Result<Plan, Error>) -> Void) {
+        storage.create(dto: dto) { result in
+            switch result {
+                case .success(let dtoResult):
+                    let plan = dtoMapper.asModel(dtoResult: dtoResult)
+                    completion(.success(plan))
+                case .failure(let e):
+                    print(e.localizedDescription)
+                    completion(.failure(e))
+            }
+        }
     }
     
     func search(dto: PlanDto.Search,
-              completion: (Result<[PlanDto.Result], Error>) -> Void) {
-        storage.search(dto: dto, completion: completion)
+              completion: (Result<[Plan], Error>) -> Void) {
+        storage.search(dto: dto) { result in
+            switch result {
+                case .success(let dtoResults):
+                    let plans = dtoResults.map { dtoMapper.asModel(dtoResult: $0) }
+                    completion(.success(plans))
+                case .failure(let e):
+                    print(e.localizedDescription)
+                    completion(.failure(e))
+            }
+        }
     }
     
     func update(dto: PlanDto.Update,
-                completion: (Result<PlanDto.Result, Error>) -> Void) {
-        storage.update(dto: dto, completion: completion)
+                completion: (Result<Plan, Error>) -> Void) {
+        storage.update(dto: dto) { result in
+            switch result {
+                case .success(let dtoResult):
+                    let plan = dtoMapper.asModel(dtoResult: dtoResult)
+                    completion(.success(plan))
+                case .failure(let e):
+                    print(e.localizedDescription)
+                    completion(.failure(e))
+            }
+        }
     }
     
     func delete(id: Plan.Identifier,

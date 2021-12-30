@@ -17,6 +17,15 @@ class PlanDtoMapper: DtoMapper {
                      achieve: dtoCreate.achieve ?? false)
     }
     
+    func asModel(dtoResult: PlanDto.Result) -> Plan {
+        return .init(id: dtoResult.id,
+                     name: dtoResult.name,
+                     date: dtoResult.date,
+                     color: dtoResult.color,
+                     notification: dtoResult.notification,
+                     achieve: dtoResult.achieve)
+    }
+    
     func asResultDto(entity: Plan) -> PlanDto.Result {
         return .init(id: entity.id,
                      name: entity.name,

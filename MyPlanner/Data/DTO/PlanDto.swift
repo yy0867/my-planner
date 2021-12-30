@@ -18,9 +18,23 @@ struct PlanDto {
         let color: Plan.Color
         
         // Optional
-        let id: Plan.Identifier? = 0
-        let notification: Bool? = false
-        let achieve: Bool? = false
+        let id: Plan.Identifier
+        let notification: Bool
+        let achieve: Bool
+        
+        init(id: Plan.Identifier = 0,
+             name: String,
+             date: Date,
+             color: Plan.Color,
+             notification: Bool = false,
+             achieve: Bool = false) {
+            self.id = id
+            self.name = name
+            self.date = date
+            self.color = color
+            self.notification = notification
+            self.achieve = achieve
+        }
     }
     
     struct Search {

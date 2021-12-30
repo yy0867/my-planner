@@ -101,7 +101,8 @@ extension PlanRealmStorage {
             }
             
             if let date = dto.date {
-                if plan.date != date { return false }
+                // YYYY-MM-dd 형식으로 비교
+                if plan.date.toString() != date.toString() { return false }
             }
             
             return true

@@ -14,5 +14,6 @@ protocol DtoMapper {
     associatedtype E
     
     func asEntity(dtoCreate: DTO_CREATE) -> E
+    func asModel(dtoResult: DTO_RESULT) -> E
     func asResultDto(entity: E) -> DTO_RESULT
 }
