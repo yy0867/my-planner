@@ -12,7 +12,7 @@ struct Plan {
     typealias Identifier = Int
     typealias Color = String
     
-    var id: Identifier
+    var id: Identifier = 0
     var name: String
     var date: Date
     var color: Color

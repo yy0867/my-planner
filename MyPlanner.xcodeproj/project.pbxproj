@@ -7,21 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A52950C3277DD81B00334C56 /* PlanDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950C2277DD81B00334C56 /* PlanDto.swift */; };
+		A52950C6277DDB6500334C56 /* PlanDtoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950C5277DDB6500334C56 /* PlanDtoMapper.swift */; };
+		A52950C8277DDB6D00334C56 /* DtoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950C7277DDB6D00334C56 /* DtoMapper.swift */; };
+		A52950CA277DDD6300334C56 /* PlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950C9277DDD6300334C56 /* PlanRepository.swift */; };
+		A52950CC277DDEC700334C56 /* DefaultPlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950CB277DDEC700334C56 /* DefaultPlanRepository.swift */; };
+		A52950CE277DDEF700334C56 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950CD277DDEF700334C56 /* Storage.swift */; };
+		A52950D1277DDFA300334C56 /* PlanRealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950D0277DDFA300334C56 /* PlanRealmStorage.swift */; };
 		A54C28E0277CACDE008D256C /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C28DF277CACDE008D256C /* Plan.swift */; };
-		A54C28E3277CAF68008D256C /* FetchPlanListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C28E2277CAF68008D256C /* FetchPlanListRepository.swift */; };
-		A54C28E6277CB1B7008D256C /* DefaultFetchPlanListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C28E5277CB1B7008D256C /* DefaultFetchPlanListRepository.swift */; };
 		A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */; };
-		A599BECB277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BECA277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift */; };
-		A599BECE277CB4DC005F5B1C /* PlanListFetchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BECD277CB4DC005F5B1C /* PlanListFetchStorage.swift */; };
-		A599BED2277CB64C005F5B1C /* PlanEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED1277CB64C005F5B1C /* PlanEntity.swift */; };
+		A599BED2277CB64C005F5B1C /* RealmPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED1277CB64C005F5B1C /* RealmPlan.swift */; };
 		A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED3277CB686005F5B1C /* Identifiable.swift */; };
-		A599BED7277CB7F2005F5B1C /* PlanEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED6277CB7F2005F5B1C /* PlanEntityMapper.swift */; };
-		A599BEDE277CBF76005F5B1C /* SavePlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEDD277CBF76005F5B1C /* SavePlanRepository.swift */; };
-		A599BEE0277CBFA8005F5B1C /* DefaultSavePlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEDF277CBFA8005F5B1C /* DefaultSavePlanRepository.swift */; };
-		A599BEE2277CBFD1005F5B1C /* SavePlanStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEE1277CBFD1005F5B1C /* SavePlanStorage.swift */; };
-		A599BEE4277CC019005F5B1C /* RealmSavePlanStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEE3277CC019005F5B1C /* RealmSavePlanStorage.swift */; };
-		A599BEE9277CC3F5005F5B1C /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEE8277CC3F5005F5B1C /* DTO.swift */; };
-		A599BEEE277CC5E5005F5B1C /* RealmStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEED277CC5E5005F5B1C /* RealmStorageTest.swift */; };
 		A599BEF1277CC661005F5B1C /* Plan+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEF0277CC661005F5B1C /* Plan+Stub.swift */; };
 		A5BB59D2277CA66F0058240E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59D1277CA66F0058240E /* AppDelegate.swift */; };
 		A5BB59D4277CA66F0058240E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59D3277CA66F0058240E /* SceneDelegate.swift */; };
@@ -61,21 +57,17 @@
 		79C1A4333318B40E891BDCA9 /* Pods-MyPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner.debug.xcconfig"; path = "Target Support Files/Pods-MyPlanner/Pods-MyPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 		7E7A5910B98A62F4A4E070FF /* Pods-MyPlanner-MyPlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner-MyPlannerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyPlanner-MyPlannerUITests/Pods-MyPlanner-MyPlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		88DE7D24ADC41878415831AD /* Pods_MyPlanner_MyPlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlanner_MyPlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A52950C2277DD81B00334C56 /* PlanDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDto.swift; sourceTree = "<group>"; };
+		A52950C5277DDB6500334C56 /* PlanDtoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDtoMapper.swift; sourceTree = "<group>"; };
+		A52950C7277DDB6D00334C56 /* DtoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoMapper.swift; sourceTree = "<group>"; };
+		A52950C9277DDD6300334C56 /* PlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRepository.swift; sourceTree = "<group>"; };
+		A52950CB277DDEC700334C56 /* DefaultPlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlanRepository.swift; sourceTree = "<group>"; };
+		A52950CD277DDEF700334C56 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		A52950D0277DDFA300334C56 /* PlanRealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRealmStorage.swift; sourceTree = "<group>"; };
 		A54C28DF277CACDE008D256C /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
-		A54C28E2277CAF68008D256C /* FetchPlanListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlanListRepository.swift; sourceTree = "<group>"; };
-		A54C28E5277CB1B7008D256C /* DefaultFetchPlanListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchPlanListRepository.swift; sourceTree = "<group>"; };
 		A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
-		A599BECA277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlanListFetchStorage.swift; sourceTree = "<group>"; };
-		A599BECD277CB4DC005F5B1C /* PlanListFetchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListFetchStorage.swift; sourceTree = "<group>"; };
-		A599BED1277CB64C005F5B1C /* PlanEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanEntity.swift; sourceTree = "<group>"; };
+		A599BED1277CB64C005F5B1C /* RealmPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlan.swift; sourceTree = "<group>"; };
 		A599BED3277CB686005F5B1C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
-		A599BED6277CB7F2005F5B1C /* PlanEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanEntityMapper.swift; sourceTree = "<group>"; };
-		A599BEDD277CBF76005F5B1C /* SavePlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePlanRepository.swift; sourceTree = "<group>"; };
-		A599BEDF277CBFA8005F5B1C /* DefaultSavePlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSavePlanRepository.swift; sourceTree = "<group>"; };
-		A599BEE1277CBFD1005F5B1C /* SavePlanStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePlanStorage.swift; sourceTree = "<group>"; };
-		A599BEE3277CC019005F5B1C /* RealmSavePlanStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSavePlanStorage.swift; sourceTree = "<group>"; };
-		A599BEE8277CC3F5005F5B1C /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
-		A599BEED277CC5E5005F5B1C /* RealmStorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageTest.swift; sourceTree = "<group>"; };
 		A599BEF0277CC661005F5B1C /* Plan+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+Stub.swift"; sourceTree = "<group>"; };
 		A5BB59CE277CA66F0058240E /* MyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BB59D1277CA66F0058240E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +123,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A52950C0277DB0F100334C56 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A52950C1277DD80F00334C56 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				A52950C4277DDB5E00334C56 /* Mapper */,
+				A52950C2277DD81B00334C56 /* PlanDto.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		A52950C4277DDB5E00334C56 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				A52950C5277DDB6500334C56 /* PlanDtoMapper.swift */,
+				A52950C7277DDB6D00334C56 /* DtoMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		A52950CF277DDF9900334C56 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */,
+				A52950D0277DDFA300334C56 /* PlanRealmStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		A54C28D4277CABA6008D256C /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				A54C28E4277CB17D008D256C /* Repository */,
+				A52950C1277DD80F00334C56 /* DTO */,
 				A54C28DA277CABE1008D256C /* Entity */,
 				A54C28E7277CB21E008D256C /* PersistentStorage */,
 			);
@@ -187,6 +214,7 @@
 		A54C28DC277CAC60008D256C /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				A52950C0277DB0F100334C56 /* Protocol */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -194,8 +222,7 @@
 		A54C28DD277CAC71008D256C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				A54C28E2277CAF68008D256C /* FetchPlanListRepository.swift */,
-				A599BEDD277CBF76005F5B1C /* SavePlanRepository.swift */,
+				A52950C9277DDD6300334C56 /* PlanRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -211,8 +238,7 @@
 		A54C28E4277CB17D008D256C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				A54C28E5277CB1B7008D256C /* DefaultFetchPlanListRepository.swift */,
-				A599BEDF277CBFA8005F5B1C /* DefaultSavePlanRepository.swift */,
+				A52950CB277DDEC700334C56 /* DefaultPlanRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -229,10 +255,8 @@
 		A599BEC9277CB479005F5B1C /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				A52950CF277DDF9900334C56 /* Storage */,
 				A599BED0277CB633005F5B1C /* Entity */,
-				A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */,
-				A599BECA277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift */,
-				A599BEE3277CC019005F5B1C /* RealmSavePlanStorage.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -240,8 +264,7 @@
 		A599BECC277CB4D3005F5B1C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				A599BECD277CB4DC005F5B1C /* PlanListFetchStorage.swift */,
-				A599BEE1277CBFD1005F5B1C /* SavePlanStorage.swift */,
+				A52950CD277DDEF700334C56 /* Storage.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -249,20 +272,10 @@
 		A599BED0277CB633005F5B1C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				A599BED8277CB866005F5B1C /* Mapper */,
-				A599BED1277CB64C005F5B1C /* PlanEntity.swift */,
+				A599BED1277CB64C005F5B1C /* RealmPlan.swift */,
 				A599BED3277CB686005F5B1C /* Identifiable.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		A599BED8277CB866005F5B1C /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-				A599BED6277CB7F2005F5B1C /* PlanEntityMapper.swift */,
-				A599BEE8277CC3F5005F5B1C /* DTO.swift */,
-			);
-			path = Mapper;
 			sourceTree = "<group>";
 		};
 		A599BEEA277CC5C3005F5B1C /* Domain */ = {
@@ -275,7 +288,6 @@
 		A599BEEB277CC5C9005F5B1C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A599BEED277CC5E5005F5B1C /* RealmStorageTest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -594,23 +606,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A599BEE4277CC019005F5B1C /* RealmSavePlanStorage.swift in Sources */,
-				A599BEDE277CBF76005F5B1C /* SavePlanRepository.swift in Sources */,
-				A54C28E3277CAF68008D256C /* FetchPlanListRepository.swift in Sources */,
 				A54C28E0277CACDE008D256C /* Plan.swift in Sources */,
 				A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */,
-				A54C28E6277CB1B7008D256C /* DefaultFetchPlanListRepository.swift in Sources */,
-				A599BED2277CB64C005F5B1C /* PlanEntity.swift in Sources */,
+				A52950CC277DDEC700334C56 /* DefaultPlanRepository.swift in Sources */,
+				A599BED2277CB64C005F5B1C /* RealmPlan.swift in Sources */,
+				A52950C3277DD81B00334C56 /* PlanDto.swift in Sources */,
 				A5BB59D6277CA66F0058240E /* PlanListViewController.swift in Sources */,
-				A599BECB277CB4C2005F5B1C /* RealmPlanListFetchStorage.swift in Sources */,
-				A599BEE0277CBFA8005F5B1C /* DefaultSavePlanRepository.swift in Sources */,
-				A599BECE277CB4DC005F5B1C /* PlanListFetchStorage.swift in Sources */,
+				A52950C6277DDB6500334C56 /* PlanDtoMapper.swift in Sources */,
+				A52950C8277DDB6D00334C56 /* DtoMapper.swift in Sources */,
+				A52950D1277DDFA300334C56 /* PlanRealmStorage.swift in Sources */,
+				A52950CA277DDD6300334C56 /* PlanRepository.swift in Sources */,
 				A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */,
-				A599BEE9277CC3F5005F5B1C /* DTO.swift in Sources */,
 				A5BB59D2277CA66F0058240E /* AppDelegate.swift in Sources */,
 				A5BB59D4277CA66F0058240E /* SceneDelegate.swift in Sources */,
-				A599BED7277CB7F2005F5B1C /* PlanEntityMapper.swift in Sources */,
-				A599BEE2277CBFD1005F5B1C /* SavePlanStorage.swift in Sources */,
+				A52950CE277DDEF700334C56 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +629,6 @@
 			files = (
 				A599BEF1277CC661005F5B1C /* Plan+Stub.swift in Sources */,
 				A5BB59E9277CA6700058240E /* MyPlannerTests.swift in Sources */,
-				A599BEEE277CC5E5005F5B1C /* RealmStorageTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

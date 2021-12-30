@@ -15,4 +15,8 @@ class RealmStorage {
     func realm() throws -> Realm {
         return try Realm()
     }
+    
+    func realmPath() -> String {
+        return Realm.Configuration.defaultConfiguration.fileURL?.absoluteString ?? "nil"
+    }
 }
