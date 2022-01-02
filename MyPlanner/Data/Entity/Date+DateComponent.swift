@@ -9,33 +9,32 @@ import Foundation
 
 extension Date {
     
-    func toString(format: String = "YYYY-MM-dd") -> String {
+    func toString(format: String = "YYYY-MM-dd (E) HH:mm:ss") -> String {
         let formatter = DateFormatter()
-        
-        formatter.timeZone = TimeZone(identifier: "ko_KR")
+        formatter.timeZone = .autoupdatingCurrent
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = format
-        
         return formatter.string(from: self)
     }
-}
-
-extension DateComponents {
     
-    init(year: Int,
-         month: Int,
-         day: Int) {
-        self.init(calendar: .current,
-                  timeZone: TimeZone(abbreviation: "KST"),
-                  year: year,
-                  month: month,
-                  day: day)
+    static func getWeekdays(of date: Self) -> [Self] {
+        let calendar = Calendar.current
+        let dayOfWeek = calendar.component(.weekday, from: date) - 1
+        guard let weekdays = calendar.range(of: .weekday, in: .weekOfYear, for: date) else {
+            print("Date.getWeekdays(of:) -> found nil in guard let weekdays = ...")
+            return []
+        }
+        let days = (weekdays.lowerBound ..< weekdays.upperBound)
+            .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: date) }
+        
+        return days
     }
     
     static func createDate(year: Int,
                            month: Int,
-                           day: Int) -> Date {
-        let dateComponent = DateComponents(year: year,
+                           day: Int) -> Self {
+        let dateComponent = DateComponents(calendar: .current,
+                                           year: year,
                                            month: month,
                                            day: day)
         guard let date = dateComponent.date else {

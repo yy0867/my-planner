@@ -12,7 +12,7 @@ extension Plan {
     
     static func stub(id: Plan.Identifier = 0,
                      name: String = "PlanName",
-                     date: Date = Date(),
+                     date: Date,
                      color: Plan.Color = "#FFFFFF",
                      notification: Bool = false,
                      achieve: Bool = false) -> Self {

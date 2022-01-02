@@ -11,7 +11,10 @@ import XCTest
 
 class RealmStorageTests: XCTestCase {
     
-    let mockPlan = Plan.stub(name: "SearchByNameTest")
+    let mockPlan = Plan.stub(name: "SearchByNameTest",
+                             date: .createDate(year: 2022,
+                                               month: 1,
+                                               day: 3))
     let storage = PlanRealmStorage(dtoMapper: PlanDtoMapper())
     
     // MARK: - Create
@@ -55,9 +58,9 @@ class RealmStorageTests: XCTestCase {
     }
     
     func testRealmSearchByDate() {
-        let date = DateComponents.createDate(year: 2021,
-                                             month: 12,
-                                             day: 30)
+        let date = Date.createDate(year: 2021,
+                                   month: 12,
+                                   day: 30)
         
         testRealmSearchBy(dtoSearch: PlanDto.Search(id: nil,
                                                     name: nil,

@@ -10,16 +10,17 @@ import RxSwift
 import RxRelay
 
 protocol PlanListViewModelInput {
-    func changeDate(date: Date)
+    func changeDate(date: Date,
+                    completion: @escaping () -> Void)
 }
 
 protocol PlanListViewModelOutput {
     
-    typealias Day = (day: Int, dayOfWeek: String)
     
     var selectedDate: BehaviorRelay<Date> { get }
-    var week: BehaviorRelay<[Day]> { get }
+    var week: BehaviorRelay<[Date]> { get }
     var planList: BehaviorRelay<[Plan]> { get }
+    var disposeBag: DisposeBag { get }
 }
 
 protocol PlanListViewModel: PlanListViewModelInput, PlanListViewModelOutput { }
@@ -31,19 +32,30 @@ final class DefaultPlanListViewModel: PlanListViewModel {
     
     init(fetchPlanListUseCase: FetchPlanListByDateUseCase) {
         self.fetchPlanListUseCase = fetchPlanListUseCase
+        bindOutputToSelectedDate()
     }
     
-    private var _selectedDate: Date
-    private var _week: [Day]
-    private var _planList: [Plan]
+    // MARK: - Methods
+    private func bindOutputToSelectedDate() {
+        selectedDate.subscribe(onNext: { [weak self] date in
+            guard let self = self else { return }
+            self.week.accept(Date.getWeekdays(of: date))
+        }).disposed(by: disposeBag)
+    }
     
     // MARK: - Input
-    public func changeDate(date: Date) {
-        self._selectedDate = date
+    public func changeDate(date: Date,
+                           completion: @escaping () -> Void) {
+        selectedDate.accept(date)
+        fetchPlanListUseCase.execute(date: date) { plans in
+            self.planList.accept(plans)
+            completion()
+        }
     }
     
-    // MARK: - Output aksfdgnklreiosfdj
-    let selectedDate: BehaviorRelay<Date>
-    let week: BehaviorRelay<[Day]>
-    let planList: BehaviorRelay<[Plan]>
+    // MARK: - Output
+    public let selectedDate: BehaviorRelay<Date> = BehaviorRelay(value: Date())
+    public let week: BehaviorRelay<[Date]> = BehaviorRelay(value: [])
+    public let planList: BehaviorRelay<[Plan]> = BehaviorRelay(value: [])
+    public let disposeBag: DisposeBag = DisposeBag()
 }

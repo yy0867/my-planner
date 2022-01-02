@@ -16,13 +16,13 @@ class FetchPlanListByDateUseCaseTests: XCTestCase {
         let storage = PlanRealmStorage(dtoMapper: dtoMapper)
         return DefaultPlanRepository(storage: storage)
     }()
-
+    
     func testExecute() {
         // given
         let useCase = FetchPlanListByDateUseCase(repository: repository)
-        let date = DateComponents.createDate(year: 2021,
-                                             month: 12,
-                                             day: 30)
+        let date = Date.createDate(year: 2022,
+                                   month: 1,
+                                   day: 3)
         let expectation = self.expectation(description: "fetchPlanList execute success")
         var response: [Plan] = []
         

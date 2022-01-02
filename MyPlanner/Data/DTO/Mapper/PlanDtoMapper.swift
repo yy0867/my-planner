@@ -13,8 +13,8 @@ class PlanDtoMapper: DtoMapper {
         return .init(name: dtoCreate.name,
                      date: dtoCreate.date,
                      color: dtoCreate.color,
-                     notification: dtoCreate.notification ?? false,
-                     achieve: dtoCreate.achieve ?? false)
+                     notification: dtoCreate.notification,
+                     achieve: dtoCreate.achieve)
     }
     
     func asModel(dtoResult: PlanDto.Result) -> Plan {

@@ -27,6 +27,7 @@
 		A52950ED277E2D7100334C56 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950EC277E2D7100334C56 /* CustomView.swift */; };
 		A52950F1277E2DFB00334C56 /* PlanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950F0277E2DFB00334C56 /* PlanListViewModel.swift */; };
 		A54C28E0277CACDE008D256C /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C28DF277CACDE008D256C /* Plan.swift */; };
+		A564ED182782074300972349 /* PlanListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564ED172782074300972349 /* PlanListViewModelTests.swift */; };
 		A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */; };
 		A599BED2277CB64C005F5B1C /* RealmPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED1277CB64C005F5B1C /* RealmPlan.swift */; };
 		A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED3277CB686005F5B1C /* Identifiable.swift */; };
@@ -87,6 +88,7 @@
 		A52950EC277E2D7100334C56 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A52950F0277E2DFB00334C56 /* PlanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListViewModel.swift; sourceTree = "<group>"; };
 		A54C28DF277CACDE008D256C /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		A564ED172782074300972349 /* PlanListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListViewModelTests.swift; sourceTree = "<group>"; };
 		A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		A599BED1277CB64C005F5B1C /* RealmPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlan.swift; sourceTree = "<group>"; };
 		A599BED3277CB686005F5B1C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -295,6 +297,22 @@
 			path = PersistentStorage;
 			sourceTree = "<group>";
 		};
+		A564ED152782073400972349 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A564ED162782073800972349 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A564ED162782073800972349 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A564ED172782074300972349 /* PlanListViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A599BEC9277CB479005F5B1C /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +402,7 @@
 		A5BB59E7277CA6700058240E /* MyPlannerTests */ = {
 			isa = PBXGroup;
 			children = (
+				A564ED152782073400972349 /* Presentation */,
 				A599BEEA277CC5C3005F5B1C /* Domain */,
 				A599BEEB277CC5C9005F5B1C /* Data */,
 				A599BEEF277CC65A005F5B1C /* Mocks */,
@@ -700,6 +719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A599BEF1277CC661005F5B1C /* Plan+Stub.swift in Sources */,
+				A564ED182782074300972349 /* PlanListViewModelTests.swift in Sources */,
 				A52950D9277DF89000334C56 /* PlanRepositoryTests.swift in Sources */,
 				A52950E3277E118900334C56 /* FetchPlanListByDateUseCaseTests.swift in Sources */,
 				A52950D5277DF1D100334C56 /* RealmStorageTests.swift in Sources */,

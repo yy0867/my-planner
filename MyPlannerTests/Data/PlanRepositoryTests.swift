@@ -89,9 +89,9 @@ class PlanRepositoryTests: XCTestCase {
     }
     
     func testPlanRepositorySearchByDate() {
-        let date = DateComponents.createDate(year: 2021,
-                                             month: 12,
-                                             day: 30)
+        let date = Date.createDate(year: 2021,
+                                   month: 12,
+                                   day: 30)
         
         let searchDto = PlanDto.Search(id: nil,
                                        name: nil,
