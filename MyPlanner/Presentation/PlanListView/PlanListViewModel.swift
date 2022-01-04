@@ -9,14 +9,19 @@ import Foundation
 import RxSwift
 import RxRelay
 
+@objc
 protocol PlanListViewModelInput {
-    func changeDate(date: Date,
-                    completion: @escaping () -> Void)
+    
+    func changeDate(date: Date)
+    func presentProfile()
+    func presentDateSelector()
+    func presentAddPlan()
+    func presentSearchPlan()
 }
 
 protocol PlanListViewModelOutput {
     
-    
+    var touchAction: PublishSubject<PlanListTitleBarAction> { get }
     var selectedDate: BehaviorRelay<Date> { get }
     var week: BehaviorRelay<[Date]> { get }
     var planList: BehaviorRelay<[Plan]> { get }
@@ -44,16 +49,22 @@ final class DefaultPlanListViewModel: PlanListViewModel {
     }
     
     // MARK: - Input
-    public func changeDate(date: Date,
-                           completion: @escaping () -> Void) {
+    public func changeDate(date: Date) {
         selectedDate.accept(date)
         fetchPlanListUseCase.execute(date: date) { plans in
             self.planList.accept(plans)
-            completion()
         }
     }
     
+    @objc public func presentProfile() { touchAction.onNext(.profile) }
+    @objc public func presentDateSelector() { touchAction.onNext(.dateSelector) }
+    @objc public func presentAddPlan() { touchAction.onNext(.addPlan) }
+    @objc public func presentSearchPlan() { touchAction.onNext(.searchPlan) }
+    
+    
     // MARK: - Output
+
+    public let touchAction: PublishSubject<PlanListTitleBarAction> = PublishSubject()
     public let selectedDate: BehaviorRelay<Date> = BehaviorRelay(value: Date())
     public let week: BehaviorRelay<[Date]> = BehaviorRelay(value: [])
     public let planList: BehaviorRelay<[Plan]> = BehaviorRelay(value: [])

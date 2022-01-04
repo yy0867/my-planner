@@ -32,16 +32,36 @@ extension Date {
     
     static func createDate(year: Int,
                            month: Int,
-                           day: Int) -> Self {
-        let dateComponent = DateComponents(calendar: .current,
+                           day: Int,
+                           hour: Int = 0,
+                           minute: Int = 0) -> Self {
+        let dateComponent = DateComponents(calendar: .autoupdatingCurrent,
+                                           timeZone: .autoupdatingCurrent,
                                            year: year,
                                            month: month,
-                                           day: day)
+                                           day: day,
+                                           hour: hour,
+                                           minute: minute)
+
         guard let date = dateComponent.date else {
             print("DateComponents.createDate(year:month:day:) -> dateComponents is nil.")
             return Date()
         }
         
-        return date
+        return date.addingTimeInterval(60 * 60 * 9)
+    }
+    
+    func createDate(calendar: Calendar = .current) -> Self {
+        let year = calendar.component(.year, from: self)
+        let month = calendar.component(.month, from: self)
+        let day = calendar.component(.day, from: self)
+        let hour = calendar.component(.hour, from: self)
+        let minute = calendar.component(.minute, from: self)
+        
+        return Date.createDate(year: year,
+                               month: month,
+                               day: day,
+                               hour: hour,
+                               minute: minute)
     }
 }

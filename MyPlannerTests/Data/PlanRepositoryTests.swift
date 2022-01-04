@@ -13,7 +13,7 @@ class PlanRepositoryTests: XCTestCase {
     
     let storage = PlanRealmStorage(dtoMapper: PlanDtoMapper())
     let mockPlan = Plan.stub(name: "PlanRepositoryTestMock",
-                             date: Date(),
+                             date: Date().createDate(),
                              color: "#3F34A2",
                              notification: true,
                              achieve: false)

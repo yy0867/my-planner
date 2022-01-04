@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AddPlanUseCase {
+class DefaultAddPlanUseCase: AddPlanUseCase {
     
     // MARK: - Property
     let repository: PlanRepository
@@ -17,7 +17,8 @@ class AddPlanUseCase {
     }
     
     // MARK: - Methods
-    func execute(newPlan: Plan, completion: (Plan) -> Void) {
+    func execute(newPlan: Plan,
+                 completion: (Plan) -> Void) {
         let createDto = PlanDto.Create(name: newPlan.name,
                                        date: newPlan.date,
                                        color: newPlan.color,

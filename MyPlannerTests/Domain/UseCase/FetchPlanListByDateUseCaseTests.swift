@@ -19,10 +19,10 @@ class FetchPlanListByDateUseCaseTests: XCTestCase {
     
     func testExecute() {
         // given
-        let useCase = FetchPlanListByDateUseCase(repository: repository)
+        let useCase = DefaultFetchPlanListByDateUseCase(repository: repository)
         let date = Date.createDate(year: 2022,
                                    month: 1,
-                                   day: 3)
+                                   day: 10)
         let expectation = self.expectation(description: "fetchPlanList execute success")
         var response: [Plan] = []
         

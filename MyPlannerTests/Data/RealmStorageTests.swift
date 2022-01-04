@@ -11,10 +11,12 @@ import XCTest
 
 class RealmStorageTests: XCTestCase {
     
-    let mockPlan = Plan.stub(name: "SearchByNameTest",
+    let mockPlan = Plan.stub(name: "CreateDateTest",
                              date: .createDate(year: 2022,
                                                month: 1,
-                                               day: 3))
+                                               day: 10,
+                                               hour: 17,
+                                               minute: 30))
     let storage = PlanRealmStorage(dtoMapper: PlanDtoMapper())
     
     // MARK: - Create

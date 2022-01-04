@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FetchPlanListByDateUseCase {
+class DefaultFetchPlanListByDateUseCase: FetchPlanListByDateUseCase {
     
     // MARK: - Property
     let repository: PlanRepository
@@ -25,6 +25,7 @@ class FetchPlanListByDateUseCase {
         repository.search(dto: searchDto) { result in
             switch result {
                 case .success(let r):
+                    print(r)
                     completion(r)
                 case .failure(let e):
                     print(e.localizedDescription)

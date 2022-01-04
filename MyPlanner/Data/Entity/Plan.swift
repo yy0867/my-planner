@@ -19,3 +19,5 @@ struct Plan {
     var notification: Bool
     var achieve: Bool
 }
+
+extension Plan: Equatable { }

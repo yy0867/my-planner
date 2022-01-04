@@ -10,28 +10,53 @@ import RxBlocking
 @testable import MyPlanner
 
 class PlanListViewModelTests: XCTestCase {
-
+    
+    lazy var planStubs: [Plan] = {
+        var plans = [Plan]()
+        
+        for i in 1...10 {
+            plans.append(Plan.stub(id: i,
+                                   name: "PlanStub\(i)",
+                                   date: Date.createDate(year: 2022, month: 2, day: i),
+                                   color: "#FFFFFF",
+                                   notification: true,
+                                   achieve: false))
+        }
+        
+        return plans
+    }()
+    
+    class MockFetchPlanListByDateUseCase: FetchPlanListByDateUseCase {
+        
+        let plans: [Plan]
+        
+        init(plans: [Plan]) {
+            self.plans = plans
+        }
+        
+        func execute(date: Date,
+                     completion: ([Plan]) -> Void) {
+            completion(plans.filter { $0.date == date })
+        }
+    }
+    
     func test_WeekAndPlanListChanges_When_SelectedDateUpdated() {
         // given
-        let storage = PlanRealmStorage(dtoMapper: PlanDtoMapper())
-        let repository = DefaultPlanRepository(storage: storage)
-        let useCase = FetchPlanListByDateUseCase(repository: repository)
-        
-        let expectation = self.expectation(description: "update data by selectedDate success.")
-        let viewModel = DefaultPlanListViewModel(fetchPlanListUseCase: useCase)
-        let date = Date.createDate(year: 2021, month: 12, day: 30)
+        let useCase = MockFetchPlanListByDateUseCase(plans: planStubs)
+        let expectation = self.expectation(description: "plan list viewmodel -> fetch success")
+        let range: Int = 3 // Range must be 1 ~ 10
+        var response: [Plan] = []
         
         // when
-        viewModel.changeDate(date: date) {
+        useCase.execute(date: Date.createDate(year: 2022,
+                                              month: 2,
+                                              day: range)) { plans in
+            response = plans
             expectation.fulfill()
         }
         
         // then
         wait(for: [expectation], timeout: 5)
-        
-        XCTAssertEqual(date.toString(), viewModel.selectedDate.value.toString())
-        arrayLog(viewModel.planList.value)
-        arrayLog(viewModel.week.value)
-        log(viewModel.selectedDate.value)
+        XCTAssertEqual(response.first!, planStubs[range - 1])
     }
 }
