@@ -62,7 +62,7 @@ class PlanListView: DeclarativeView {
         weekCalendar.snp.makeConstraints { make in
             make.right.left.equalToSuperview().inset(20)
             make.top.equalTo(titleBar.snp.bottom).offset(10)
-            make.height.equalTo(300)
+            make.height.equalTo(100)
         }
     }
     

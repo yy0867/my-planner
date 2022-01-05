@@ -17,6 +17,7 @@ class PlanListViewController: DeclarativeViewController {
     init(viewModel: PlanListViewModel) {
         self.viewModel = viewModel
         super.init()
+        viewModel.changeDate(date: Date())
     }
     
     override func viewDidLoad() {

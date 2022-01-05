@@ -73,7 +73,7 @@ class WeekCalendar: DeclarativeView {
     
     private func activateCalendarConstraints() {
         calendar.snp.makeConstraints { make in
-            make.left.equalTo(prevWeekButton).offset(15)
+            make.left.equalTo(prevWeekButton.snp.right).offset(15)
             make.top.bottom.equalToSuperview()
         }
     }
