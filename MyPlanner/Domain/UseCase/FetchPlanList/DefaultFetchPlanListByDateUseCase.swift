@@ -25,7 +25,7 @@ class DefaultFetchPlanListByDateUseCase: FetchPlanListByDateUseCase {
         repository.search(dto: searchDto) { result in
             switch result {
                 case .success(let r):
-                    print(r)
+                    print("\(self.self)::\(r)")
                     completion(r)
                 case .failure(let e):
                     print(e.localizedDescription)

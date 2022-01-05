@@ -23,7 +23,7 @@ protocol PlanListViewModelOutput {
     
     var touchAction: PublishSubject<PlanListTitleBarAction> { get }
     var selectedDate: BehaviorRelay<Date> { get }
-    var week: BehaviorRelay<[Date]> { get }
+//    var week: BehaviorRelay<[Date]> { get }
     var planList: BehaviorRelay<[Plan]> { get }
     var disposeBag: DisposeBag { get }
 }
@@ -42,18 +42,20 @@ final class DefaultPlanListViewModel: PlanListViewModel {
     
     // MARK: - Methods
     private func bindOutputToSelectedDate() {
-        selectedDate.subscribe(onNext: { [weak self] date in
-            guard let self = self else { return }
-            self.week.accept(Date.getWeekdays(of: date))
-        }).disposed(by: disposeBag)
+        selectedDate
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] date in
+                guard let strongSelf = self else { return }
+//                strongSelf.week.accept(Date.getWeekdays(of: date))
+                strongSelf.fetchPlanListUseCase.execute(date: date) { plans in
+                    strongSelf.planList.accept(plans)
+                }
+            }).disposed(by: disposeBag)
     }
     
     // MARK: - Input
     public func changeDate(date: Date) {
         selectedDate.accept(date)
-        fetchPlanListUseCase.execute(date: date) { plans in
-            self.planList.accept(plans)
-        }
     }
     
     @objc public func presentProfile() { touchAction.onNext(.profile) }
@@ -66,7 +68,7 @@ final class DefaultPlanListViewModel: PlanListViewModel {
 
     public let touchAction: PublishSubject<PlanListTitleBarAction> = PublishSubject()
     public let selectedDate: BehaviorRelay<Date> = BehaviorRelay(value: Date())
-    public let week: BehaviorRelay<[Date]> = BehaviorRelay(value: [])
+//    public let week: BehaviorRelay<[Date]> = BehaviorRelay(value: [])
     public let planList: BehaviorRelay<[Plan]> = BehaviorRelay(value: [])
     public let disposeBag: DisposeBag = DisposeBag()
 }

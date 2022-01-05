@@ -11,8 +11,10 @@ public struct Color {
     // MARK: - Properties
     public static let accentColor = UIColor(named: "AccentColor")
     public static let background = UIColor.white
-    public static let deselect = UIColor.gray
-    public static let select = UIColor.black
+    public static let buttonNotSelected = UIColor.gray
+    public static let buttonSelected = UIColor.black
+    public static let black = UIColor.black
+    public static let dateSelected = UIColor.white
     public static let sunday = UIColor(0xEA4747)
     public static let saturday = UIColor(0x5282E0)
 }

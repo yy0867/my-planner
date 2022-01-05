@@ -9,12 +9,13 @@ import Foundation
 
 extension Date {
     
-    func toString(format: String = "YYYY-MM-dd (E) HH:mm:ss") -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = .autoupdatingCurrent
-        formatter.locale = Locale(identifier: "ko_KR")
-        formatter.dateFormat = format
-        return formatter.string(from: self)
+    // MARK: - Static Methods
+    static var startDate: Self {
+        return Self.createDate(year: 1960, month: 1, day: 1)
+    }
+    
+    static var endDate: Self {
+        return Self.createDate(year: 2300, month: 12, day: 31)
     }
     
     static func getWeekdays(of date: Self) -> [Self] {
@@ -51,7 +52,18 @@ extension Date {
         return date.addingTimeInterval(60 * 60 * 9)
     }
     
-    func createDate(calendar: Calendar = .current) -> Self {
+    // MARK: - Instance Methods
+    func toString(format: String = "YYYY-MM-dd (E) HH:mm:ss") -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = .autoupdatingCurrent
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+    
+    func createDate() -> Self {
+        let calendar = Calendar.current
+        
         let year = calendar.component(.year, from: self)
         let month = calendar.component(.month, from: self)
         let day = calendar.component(.day, from: self)
@@ -63,5 +75,16 @@ extension Date {
                                day: day,
                                hour: hour,
                                minute: minute)
+    }
+    
+    func getComponent(of component: Calendar.Component) -> Int {
+        let calendar = Calendar.current
+        
+        return calendar.component(component, from: self)
+    }
+    
+    mutating func addWeek(_ week: Int) -> Date {
+        let oneWeek = TimeInterval(60 * 60 * 24 * 7)
+        return self.addingTimeInterval(Double(week) * oneWeek)
     }
 }

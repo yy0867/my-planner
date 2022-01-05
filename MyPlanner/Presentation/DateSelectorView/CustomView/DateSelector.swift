@@ -21,6 +21,8 @@ class DateSelector: DeclarativeView {
         datePicker.locale = Locale(identifier: "ko_KR")
         datePicker.preferredDatePickerStyle = .inline
         datePicker.datePickerMode = .date
+        datePicker.minimumDate = .startDate
+        datePicker.maximumDate = .endDate
         datePicker.date = Date()
         
         return datePicker

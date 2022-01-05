@@ -55,12 +55,12 @@ class PlanListTitleBar: UIView {
     
     lazy var addPlanButton: UIButton = {
         let button = UIButton()
-        button.tintColor = Color.deselect
+        button.tintColor = Color.buttonNotSelected
         
         let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .light, scale: .large)
         if let image = UIImage(systemName: "plus",
                                withConfiguration: imageConfiguration) {
-            button.setTitleColor(Color.select, for: .selected)
+            button.setTitleColor(Color.buttonSelected, for: .selected)
             button.setImage(image, for: .normal)
         }
         
@@ -69,12 +69,12 @@ class PlanListTitleBar: UIView {
     
     lazy var searchPlanButton: UIButton = {
         let button = UIButton()
-        button.tintColor = Color.deselect
+        button.tintColor = Color.buttonNotSelected
         
         let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .light, scale: .large)
         if let image = UIImage(systemName: "magnifyingglass",
                                withConfiguration: imageConfiguration) {
-            button.setTitleColor(Color.select, for: .selected)
+            button.setTitleColor(Color.buttonSelected, for: .selected)
             button.setImage(image, for: .normal)
         }
         
@@ -126,9 +126,10 @@ class PlanListTitleBar: UIView {
     }
     
     private func bind(to viewModel: PlanListViewModel) {
-        viewModel.selectedDate.subscribe(onNext: { date in
-            self.datePresentor.setTitle(date.toString(format: "YYYY년 M월 d일 (E)"),
-                                        for: .normal)
+        viewModel.selectedDate.subscribe(onNext: { [weak self] date in
+            guard let strongSelf = self else { return }
+            strongSelf.datePresentor.setTitle(date.toString(format: "YYYY년 M월 d일 (E)"),
+                                              for: .normal)
         }).disposed(by: disposeBag)
     }
     
