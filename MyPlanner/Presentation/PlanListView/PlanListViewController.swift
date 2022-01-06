@@ -57,9 +57,6 @@ class PlanListViewController: DeclarativeViewController {
     func presentDateSelector() {
         let vc = DateSelectorViewController(viewModel: viewModel)
         
-        vc.modalTransitionStyle = .coverVertical
-        vc.modalPresentationStyle = .popover
-        
         present(vc, animated: true, completion: nil)
     }
     

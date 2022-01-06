@@ -53,13 +53,11 @@ struct PlanDto {
         
         // Require
         let id: Plan.Identifier
-        
-        // Optional
-        let name: String?
-        let date: Date?
-        let color: Plan.Color?
-        let notification: Bool?
-        let achieve: Bool?
+        let name: String
+        let date: Date
+        let color: Plan.Color
+        let notification: Bool
+        let achieve: Bool
     }
     
     // MARK: - PlanDto.Result

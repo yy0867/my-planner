@@ -10,6 +10,12 @@ import UIKit
 extension UIColor {
     
     // MARK: - Methods
+    public convenience init(_ hexString: String) {
+        var hexStr = hexString
+        hexStr.removeFirst(2)
+        self.init(Int(hexStr, radix: 16)!)
+    }
+    
     public convenience init(_ hex: Int) {
         assert(
             0...0xFFFFFF ~= hex,

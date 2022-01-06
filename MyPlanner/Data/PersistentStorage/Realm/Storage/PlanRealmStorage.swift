@@ -58,6 +58,7 @@ class PlanRealmStorage: Storage {
             
             try realm.write {
                 realm.add(updateEntity, update: .modified)
+                completion(.success(updateEntity.asResultDto()))
             }
         } catch {
             completion(.failure(error))
@@ -114,27 +115,13 @@ extension PlanRealmStorage {
     // MARK: - Update
     func makeUpdateEntity(dto: PlanDto.Update) -> RealmPlan {
         let plan = RealmPlan()
+        
         plan.id = dto.id
-        
-        if let name = dto.name {
-            plan.name = name
-        }
-        
-        if let date = dto.date {
-            plan.date = date
-        }
-        
-        if let color = dto.color {
-            plan.color = color
-        }
-        
-        if let notification = dto.notification {
-            plan.notification = notification
-        }
-        
-        if let achieve = dto.achieve {
-            plan.achieve = achieve
-        }
+        plan.name = dto.name
+        plan.date = dto.date
+        plan.color = dto.color
+        plan.notification = dto.notification
+        plan.achieve = dto.achieve
         
         return plan
     }

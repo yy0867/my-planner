@@ -22,6 +22,10 @@ class PlanListView: DeclarativeView {
         return WeekCalendar(viewModel: viewModel)
     }()
     
+    lazy var planListTableView: PlanListTableView = {
+        return PlanListTableView(viewModel: viewModel)
+    }()
+    
     let viewModel: PlanListViewModel
 
     // MARK: - Methods
@@ -44,11 +48,13 @@ class PlanListView: DeclarativeView {
     private func constructHierarchy() {
         addSubview(titleBar)
         addSubview(weekCalendar)
+        addSubview(planListTableView)
     }
     
     private func activateConstraints() {
         activateTitleBarConstraints()
         activateWeekCalendarConstraints()
+        activatePlanListTableView()
     }
     
     private func activateTitleBarConstraints() {
@@ -63,6 +69,14 @@ class PlanListView: DeclarativeView {
             make.right.left.equalToSuperview().inset(20)
             make.top.equalTo(titleBar.snp.bottom).offset(10)
             make.height.equalTo(100)
+        }
+    }
+    
+    private func activatePlanListTableView() {
+        planListTableView.snp.makeConstraints { make in
+            make.right.left.equalToSuperview().inset(20)
+            make.top.equalTo(weekCalendar.snp.bottom).offset(10)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
     }
     

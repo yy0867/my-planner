@@ -15,7 +15,7 @@ class RealmStorageTests: XCTestCase {
                              date: .createDate(year: 2022,
                                                month: 1,
                                                day: 10,
-                                               hour: 17,
+                                               hour: 19,
                                                minute: 30))
     let storage = PlanRealmStorage(dtoMapper: PlanDtoMapper())
     
