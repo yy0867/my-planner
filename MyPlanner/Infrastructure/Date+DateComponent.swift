@@ -49,7 +49,16 @@ extension Date {
             return Date()
         }
         
-        return date.addingTimeInterval(60 * 60 * 9)
+        return date
+    }
+    
+    static func createTime(hour: Int, minute: Int) -> Self {
+        let now = Date.now
+        return .createDate(year: now.getComponent(of: .year),
+                           month: now.getComponent(of: .month),
+                           day: now.getComponent(of: .day),
+                           hour: hour,
+                           minute: minute)
     }
     
     // MARK: - Instance Methods
@@ -78,7 +87,8 @@ extension Date {
     }
     
     func getComponent(of component: Calendar.Component) -> Int {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = .autoupdatingCurrent
         
         return calendar.component(component, from: self)
     }

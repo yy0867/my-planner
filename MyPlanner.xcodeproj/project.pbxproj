@@ -47,7 +47,7 @@
 		A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED3277CB686005F5B1C /* Identifiable.swift */; };
 		A599BEF1277CC661005F5B1C /* Plan+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEF0277CC661005F5B1C /* Plan+Stub.swift */; };
 		A5B01E2027844B4C000865BF /* PlanListTitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B01E1F27844B4C000865BF /* PlanListTitleBar.swift */; };
-		A5B01E242784541C000865BF /* PlanListTitleBarAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B01E232784541C000865BF /* PlanListTitleBarAction.swift */; };
+		A5B01E242784541C000865BF /* PlanListViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B01E232784541C000865BF /* PlanListViewAction.swift */; };
 		A5B8020727848B0200E010BE /* DateSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8020627848B0200E010BE /* DateSelectorViewController.swift */; };
 		A5B8020927848B4200E010BE /* DateSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8020827848B4200E010BE /* DateSelectorDelegate.swift */; };
 		A5B8020C27848BB100E010BE /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8020B27848BB100E010BE /* DateSelector.swift */; };
@@ -136,7 +136,7 @@
 		A599BED3277CB686005F5B1C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		A599BEF0277CC661005F5B1C /* Plan+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+Stub.swift"; sourceTree = "<group>"; };
 		A5B01E1F27844B4C000865BF /* PlanListTitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListTitleBar.swift; sourceTree = "<group>"; };
-		A5B01E232784541C000865BF /* PlanListTitleBarAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListTitleBarAction.swift; sourceTree = "<group>"; };
+		A5B01E232784541C000865BF /* PlanListViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListViewAction.swift; sourceTree = "<group>"; };
 		A5B8020627848B0200E010BE /* DateSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorViewController.swift; sourceTree = "<group>"; };
 		A5B8020827848B4200E010BE /* DateSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectorDelegate.swift; sourceTree = "<group>"; };
 		A5B8020B27848BB100E010BE /* DateSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				A5B01E1F27844B4C000865BF /* PlanListTitleBar.swift */,
-				A5B01E232784541C000865BF /* PlanListTitleBarAction.swift */,
+				A5B01E232784541C000865BF /* PlanListViewAction.swift */,
 			);
 			path = PlanListTitleBar;
 			sourceTree = "<group>";
@@ -896,7 +896,7 @@
 				A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */,
 				A5BB59D2277CA66F0058240E /* AppDelegate.swift in Sources */,
 				A5E4CB0C27828F8500A05589 /* AddPlanUseCase.swift in Sources */,
-				A5B01E242784541C000865BF /* PlanListTitleBarAction.swift in Sources */,
+				A5B01E242784541C000865BF /* PlanListViewAction.swift in Sources */,
 				A52682C727880D6E00009127 /* AddPlanView.swift in Sources */,
 				A5B01E2027844B4C000865BF /* PlanListTitleBar.swift in Sources */,
 				A5BB59D4277CA66F0058240E /* SceneDelegate.swift in Sources */,

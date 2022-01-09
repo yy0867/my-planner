@@ -22,11 +22,12 @@ protocol PlanListViewModelAction {
     @objc func presentDateSelector()
     @objc func presentAddPlan()
     @objc func presentSearchPlan()
+    func reloadData()
 }
 
 protocol PlanListViewModelOutput {
     
-    var touchAction: PublishSubject<PlanListTitleBarAction> { get }
+    var planListViewAction: PublishSubject<PlanListViewAction> { get }
     var selectedDate: BehaviorRelay<Date> { get }
 //    var week: BehaviorRelay<[Date]> { get }
     var planList: BehaviorRelay<[Plan]> { get }
@@ -57,7 +58,7 @@ final class DefaultPlanListViewModel: PlanListViewModel {
     // MARK: - Methods
     private func bindOutputToSelectedDate() {
         selectedDate
-            .distinctUntilChanged()
+//            .distinctUntilChanged()
             .subscribe(onNext: { [weak self] date in
                 guard let strongSelf = self else { return }
 //                strongSelf.week.accept(Date.getWeekdays(of: date))
@@ -123,15 +124,15 @@ final class DefaultPlanListViewModel: PlanListViewModel {
     }
     
     // MARK: - Action
-    @objc public func presentProfile() { touchAction.onNext(.profile) }
-    @objc public func presentDateSelector() { touchAction.onNext(.dateSelector) }
-    @objc public func presentAddPlan() { touchAction.onNext(.addPlan) }
-    @objc public func presentSearchPlan() { touchAction.onNext(.searchPlan) }
-    
+    @objc public func presentProfile() { planListViewAction.onNext(.profile) }
+    @objc public func presentDateSelector() { planListViewAction.onNext(.dateSelector) }
+    @objc public func presentAddPlan() { planListViewAction.onNext(.addPlan) }
+    @objc public func presentSearchPlan() { planListViewAction.onNext(.searchPlan) }
+    public func reloadData() { planListViewAction.onNext(.reloadData) }
     
     // MARK: - Output
 
-    public let touchAction: PublishSubject<PlanListTitleBarAction> = PublishSubject()
+    public let planListViewAction: PublishSubject<PlanListViewAction> = PublishSubject()
     public let selectedDate: BehaviorRelay<Date> = BehaviorRelay(value: Date())
 //    public let week: BehaviorRelay<[Date]> = BehaviorRelay(value: [])
     public let planList: BehaviorRelay<[Plan]> = BehaviorRelay(value: [])

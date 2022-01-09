@@ -8,10 +8,11 @@
 import Foundation
 
 @objc
-public enum PlanListTitleBarAction: Int {
+public enum PlanListViewAction: Int {
     
     case profile
     case dateSelector
     case addPlan
     case searchPlan
+    case reloadData
 }

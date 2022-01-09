@@ -66,6 +66,10 @@ class AddPlanViewController: DeclarativeViewController {
     
     private func bind(to viewModel: AddPlanViewModel) {
         
+        viewModel.allFieldValid()
+            .bind(to: doneButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
         viewModel.inputColor.subscribe(onNext: { [weak self] selectedColor in
             guard let strongSelf = self else { return }
             strongSelf.doneButton.customView?.tintColor = UIColor(selectedColor)
@@ -100,7 +104,11 @@ class AddPlanViewController: DeclarativeViewController {
     
     @objc
     private func addPlan() {
-        dismissViewController()
+        viewModel.addPlan()
+        guard let pvc = self.presentingViewController as? PlanListViewController else { return }
+        self.dismiss(animated: true) {
+            pvc.viewModel.reloadData()
+        }
     }
 }
 

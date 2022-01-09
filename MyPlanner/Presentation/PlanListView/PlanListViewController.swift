@@ -33,13 +33,13 @@ class PlanListViewController: DeclarativeViewController {
     }
     
     func bind(to viewModel: PlanListViewModel) {
-        viewModel.touchAction.subscribe(onNext: { [weak self] action in
+        viewModel.planListViewAction.subscribe(onNext: { [weak self] action in
             guard let strongSelf = self else { return }
             strongSelf.handleAction(of: action)
         }).disposed(by: disposeBag)
     }
     
-    func handleAction(of action: PlanListTitleBarAction) {
+    func handleAction(of action: PlanListViewAction) {
         switch action {
             case .profile:
                 print("Profile clicked.")
@@ -53,6 +53,8 @@ class PlanListViewController: DeclarativeViewController {
             case .searchPlan:
                 print("search plan clicked.")
                 presentSearchPlan()
+            default:
+                break
         }
     }
     
@@ -79,6 +81,10 @@ class PlanListViewController: DeclarativeViewController {
     
     func presentSearchPlan() {
         
+    }
+    
+    func reloadData() {
+        viewModel.reloadData()
     }
 }
 

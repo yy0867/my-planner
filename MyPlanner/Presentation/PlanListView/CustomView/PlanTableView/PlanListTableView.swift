@@ -42,6 +42,11 @@ class PlanListTableView: UITableView {
             guard let strongSelf = self else { return }
             strongSelf.reloadData()
         }.disposed(by: disposeBag)
+        
+        viewModel.planListViewAction.subscribe(onNext: { [weak self] action in
+            guard let strongSelf = self else { return }
+            strongSelf.reloadData()
+        }).disposed(by: disposeBag)
     }
 }
 

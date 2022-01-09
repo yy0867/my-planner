@@ -81,6 +81,7 @@ class AddPlanView: DeclarativeView {
     lazy var selectDateField: DatePickerField = {
         let field = DatePickerField(mode: .date)
         
+        field.datePicker.date = viewModel.getSelectedDate().value
         field.textColor = Color.black
         field.font = UIFont.systemFont(ofSize: 19)
         field.addTarget(self,
@@ -94,8 +95,8 @@ class AddPlanView: DeclarativeView {
         let field = DatePickerField(mode: .time)
         
         field.textColor = Color.black
+        field.datePicker.date = .createTime(hour: 10, minute: 0)
         field.font = UIFont.systemFont(ofSize: 19)
-        field.placeholder = "시간을 선택해주세요."
         field.textAlignment = .right
         field.addTarget(self,
                         action: #selector(timeSelected),
@@ -160,26 +161,27 @@ class AddPlanView: DeclarativeView {
     }
     
     private func bind(to viewModel: AddPlanViewModel) {
-        viewModel.getSelectedDate()
+        viewModel.inputDate
             .subscribe(onNext: { [weak self] selectedDate in
                 guard let strongSelf = self else { return }
                 strongSelf.setSelectedDateFieldText(to: selectedDate)
             }).disposed(by: disposeBag)
         
-        viewModel.inputNotification
-            .subscribe(onNext: { [weak self] notification in
+        viewModel.inputTime
+            .subscribe(onNext: { [weak self] time in
                 guard let strongSelf = self else { return }
-                strongSelf.notificationButton.isSelected = notification
+                strongSelf.setSelectedTimeFieldText(to: time)
             }).disposed(by: disposeBag)
         
+        viewModel.inputNotification
+            .bind(to: notificationButton.rx.isSelected)
+            .disposed(by: disposeBag)
+        
         viewModel.inputColor
-            .subscribe(onNext: { [weak self] selectedColor in
-                guard let strongSelf = self else { return }
-                
-                strongSelf.selectColorButton.tintColor = UIColor(selectedColor)
-                strongSelf.notificationButton.tintColor = UIColor(selectedColor)
-                
-            }).disposed(by: disposeBag)
+            .map { UIColor($0) }
+            .bind(to: selectColorButton.rx.tintColor,
+                  notificationButton.rx.tintColor)
+            .disposed(by: disposeBag)
         
         selectDateField.datePicker.rx.date
             .bind(to: viewModel.inputDate)

@@ -15,7 +15,7 @@ protocol AddPlanViewModelInput {
     var inputTitle: BehaviorRelay<String> { get }
     var inputColor: BehaviorRelay<Plan.Color> { get }
     var inputDate: BehaviorRelay<Date> { get }
-    var inputTime: PublishRelay<Date> { get }
+    var inputTime: BehaviorRelay<Date> { get }
     var inputNotification: BehaviorRelay<Bool> { get }
     
     func changeDate(_ date: Date)
@@ -33,6 +33,7 @@ protocol AddPlanViewModelOutput {
     
     var addPlanAction: BehaviorRelay<AddPlanAction> { get }
     
+    func allFieldValid() -> Observable<Bool>
     func getSelectedDate() -> BehaviorRelay<Date>
 }
 
@@ -48,8 +49,8 @@ class DefaultAddPlanViewModel: AddPlanViewModel {
     
     let inputTitle: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
     let inputColor: BehaviorRelay<Plan.Color> = BehaviorRelay<Plan.Color>(value: Color.accentColor.toHexStr())
-    let inputDate: BehaviorRelay<Date> = BehaviorRelay<Date>(value: .now)
-    let inputTime: PublishRelay<Date> = PublishRelay<Date>()
+    let inputDate: BehaviorRelay<Date>
+    let inputTime: BehaviorRelay<Date> = BehaviorRelay<Date>(value: .createTime(hour: 10, minute: 00))
     let inputNotification: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     let addPlanAction: BehaviorRelay<AddPlanAction> = BehaviorRelay<AddPlanAction>(value: .none)
     
@@ -58,12 +59,15 @@ class DefaultAddPlanViewModel: AddPlanViewModel {
          planListViewModel: PlanListViewModel) {
         self.addPlanUseCase = addPlanUseCase
         self.planListViewModel = planListViewModel
+        
+        inputDate = BehaviorRelay<Date>(value: planListViewModel.selectedDate.value)
     }
     
     @objc
     func addPlan() {
-        
-        addPlanUseCase.execute(newPlan: createPlan()) { _ in }
+        addPlanUseCase.execute(newPlan: createPlan()) { [weak self] _ in
+            self?.changeDate(inputDate.value)
+        }
     }
     
     @objc
@@ -73,9 +77,17 @@ class DefaultAddPlanViewModel: AddPlanViewModel {
     }
     
     private func createPlan() -> Plan {
+        let inputDate = inputDate.value
+        let inputTime = inputTime.value
+        
+        let date = Date.createDate(year: inputDate.getComponent(of: .year),
+                                   month: inputDate.getComponent(of: .month),
+                                   day: inputDate.getComponent(of: .day),
+                                   hour: inputTime.getComponent(of: .hour),
+                                   minute: inputTime.getComponent(of: .minute))
         
         return .init(name: inputTitle.value,
-                     date: inputDate.value,
+                     date: date,
                      color: inputColor.value,
                      notification: inputNotification.value,
                      achieve: false)
@@ -98,5 +110,11 @@ class DefaultAddPlanViewModel: AddPlanViewModel {
     // MARK: - Output
     public func getSelectedDate() -> BehaviorRelay<Date> {
         return planListViewModel.selectedDate
+    }
+    
+    public func allFieldValid() -> Observable<Bool> {
+        return Observable.combineLatest(inputTitle, inputTime).map { title, _ in
+            return !title.isEmpty
+        }
     }
 }
