@@ -12,6 +12,7 @@ class AddPlanViewController: DeclarativeViewController {
     
     // MARK: - Properties
     let viewModel: AddPlanViewModel
+    let colorSelectorViewControllerFactory: ColorSelectorViewControllerFactory
     let disposeBag = DisposeBag()
     
     lazy var dismissButton: UIBarButtonItem = {
@@ -40,8 +41,10 @@ class AddPlanViewController: DeclarativeViewController {
     }()
     
     // MARK: - Methods
-    init(viewModel: AddPlanViewModel) {
+    init(viewModel: AddPlanViewModel,
+         colorSelectorViewControllerFactory: ColorSelectorViewControllerFactory) {
         self.viewModel = viewModel
+        self.colorSelectorViewControllerFactory = colorSelectorViewControllerFactory
         super.init()
     }
     
@@ -65,18 +68,28 @@ class AddPlanViewController: DeclarativeViewController {
         
         viewModel.inputColor.subscribe(onNext: { [weak self] selectedColor in
             guard let strongSelf = self else { return }
-            strongSelf.doneButton.tintColor = UIColor(selectedColor)
+            strongSelf.doneButton.customView?.tintColor = UIColor(selectedColor)
         }).disposed(by: disposeBag)
         
         viewModel.addPlanAction.subscribe(onNext: { [weak self] action in
+            guard let strongSelf = self else { return }
+            
             switch action {
                 case .colorSelector:
-                    self?.navigationController?.pushViewController(ColorSelectViewController(),
-                                                                   animated: true)
+                    strongSelf.pushColorSelectorViewController()
                 case .none:
                     break
             }
         }).disposed(by: disposeBag)
+    }
+    
+    private func pushColorSelectorViewController() {
+        let colorSelectorViewController = colorSelectorViewControllerFactory
+            .makeColorSelectorViewController(addPlanViewModel: viewModel)
+        
+        navigationItem.backButtonTitle = ""
+        navigationController?.pushViewController(colorSelectorViewController,
+                                                 animated: true)
     }
     
     @objc
@@ -89,4 +102,9 @@ class AddPlanViewController: DeclarativeViewController {
     private func addPlan() {
         dismissViewController()
     }
+}
+
+protocol ColorSelectorViewControllerFactory {
+    
+    func makeColorSelectorViewController(addPlanViewModel: AddPlanViewModel) -> ColorSelectorViewController
 }

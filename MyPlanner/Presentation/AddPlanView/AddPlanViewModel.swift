@@ -13,13 +13,14 @@ import SwiftUI
 protocol AddPlanViewModelInput {
     
     var inputTitle: BehaviorRelay<String> { get }
-    var inputColor: BehaviorRelay<String> { get }
+    var inputColor: BehaviorRelay<Plan.Color> { get }
     var inputDate: BehaviorRelay<Date> { get }
     var inputTime: PublishRelay<Date> { get }
     var inputNotification: BehaviorRelay<Bool> { get }
     
     func changeDate(_ date: Date)
     func toggleNotification()
+    func changeColor(_ color: Plan.Color)
 }
 
 @objc
@@ -46,7 +47,7 @@ class DefaultAddPlanViewModel: AddPlanViewModel {
     private let planListViewModel: PlanListViewModel
     
     let inputTitle: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    let inputColor: BehaviorRelay<String> = BehaviorRelay<String>(value: Color.accentColor.toHexStr())
+    let inputColor: BehaviorRelay<Plan.Color> = BehaviorRelay<Plan.Color>(value: Color.accentColor.toHexStr())
     let inputDate: BehaviorRelay<Date> = BehaviorRelay<Date>(value: .now)
     let inputTime: PublishRelay<Date> = PublishRelay<Date>()
     let inputNotification: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
@@ -88,6 +89,10 @@ class DefaultAddPlanViewModel: AddPlanViewModel {
     public func toggleNotification() {
         let toggledValue = !inputNotification.value
         inputNotification.accept(toggledValue)
+    }
+    
+    public func changeColor(_ color: Plan.Color) {
+        inputColor.accept(color)
     }
     
     // MARK: - Output
