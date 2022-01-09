@@ -9,7 +9,7 @@ import UIKit
 public struct Color {
     
     // MARK: - Properties
-    public static let accentColor = UIColor(named: "AccentColor")
+    public static let accentColor = UIColor(named: "AccentColor")!
     public static let background = UIColor.white
     public static let buttonNotSelected = UIColor.gray
     public static let buttonSelected = UIColor.black

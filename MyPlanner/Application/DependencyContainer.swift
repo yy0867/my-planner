@@ -25,6 +25,10 @@ class DependencyContainer {
         return DefaultUpdatePlanUseCase(repository: makePlanRepository())
     }
     
+    func makeAddPlanUseCase() -> AddPlanUseCase {
+        return DefaultAddPlanUseCase(repository: makePlanRepository())
+    }
+    
     // MARK: - Repository
     func makePlanRepository() -> PlanRepository {
         return DefaultPlanRepository(storage: planRealmStorage)
@@ -32,11 +36,26 @@ class DependencyContainer {
     
     // MARK: - PlanListView
     func makePlanListViewController() -> PlanListViewController {
-        return PlanListViewController(viewModel: makePlanListViewModel())
+        return PlanListViewController(viewModel: makePlanListViewModel(),
+                                      addPlanViewControllerFactory: self)
     }
     
     func makePlanListViewModel() -> PlanListViewModel {
         return DefaultPlanListViewModel(fetchPlanListUseCase: makeFetchPlanListByDateUseCase(),
                                         updatePlanUseCase: makeUpdatePlanUseCase())
+    }
+}
+
+extension DependencyContainer: AddPlanViewControllerFactory {
+    
+    // MARK: - AddPlanView
+    func makeAddPlanViewController(planListViewModel: PlanListViewModel) -> AddPlanViewController {
+        let addPlanViewModel = makeAddPlanViewModel(planListViewModel: planListViewModel)
+        return AddPlanViewController(viewModel: addPlanViewModel)
+    }
+    
+    func makeAddPlanViewModel(planListViewModel: PlanListViewModel) -> AddPlanViewModel {
+        return DefaultAddPlanViewModel(addPlanUseCase: makeAddPlanUseCase(),
+                                       planListViewModel: planListViewModel)
     }
 }

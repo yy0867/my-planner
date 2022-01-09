@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51CBC9C278ABF8B007E44F9 /* ToolbarTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51CBC9B278ABF8B007E44F9 /* ToolbarTextField.swift */; };
+		A51CBCA0278AD406007E44F9 /* DatePickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51CBC9F278AD406007E44F9 /* DatePickerField.swift */; };
+		A51CBCA2278ADE17007E44F9 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51CBCA1278ADE17007E44F9 /* ColorSelectorView.swift */; };
+		A51CBCA5278ADE38007E44F9 /* ColorSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51CBCA4278ADE38007E44F9 /* ColorSelectViewController.swift */; };
+		A51CBCA7278ADF0D007E44F9 /* AddPlanAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51CBCA6278ADF0D007E44F9 /* AddPlanAction.swift */; };
 		A52620BC27856B2F008B4C6B /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52620BB27856B2F008B4C6B /* DateCell.swift */; };
+		A52682C327880CE900009127 /* AddPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52682C227880CE900009127 /* AddPlanViewController.swift */; };
+		A52682C727880D6E00009127 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52682C627880D6E00009127 /* AddPlanView.swift */; };
+		A52682CB27880E0000009127 /* AddPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52682CA27880E0000009127 /* AddPlanViewModel.swift */; };
 		A52950C3277DD81B00334C56 /* PlanDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950C2277DD81B00334C56 /* PlanDto.swift */; };
 		A52950C6277DDB6500334C56 /* PlanDtoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950C5277DDB6500334C56 /* PlanDtoMapper.swift */; };
 		A52950C8277DDB6D00334C56 /* DtoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52950C7277DDB6D00334C56 /* DtoMapper.swift */; };
@@ -85,7 +93,15 @@
 		79C1A4333318B40E891BDCA9 /* Pods-MyPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner.debug.xcconfig"; path = "Target Support Files/Pods-MyPlanner/Pods-MyPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 		7E7A5910B98A62F4A4E070FF /* Pods-MyPlanner-MyPlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlanner-MyPlannerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyPlanner-MyPlannerUITests/Pods-MyPlanner-MyPlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		88DE7D24ADC41878415831AD /* Pods_MyPlanner_MyPlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlanner_MyPlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51CBC9B278ABF8B007E44F9 /* ToolbarTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarTextField.swift; sourceTree = "<group>"; };
+		A51CBC9F278AD406007E44F9 /* DatePickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerField.swift; sourceTree = "<group>"; };
+		A51CBCA1278ADE17007E44F9 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
+		A51CBCA4278ADE38007E44F9 /* ColorSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectViewController.swift; sourceTree = "<group>"; };
+		A51CBCA6278ADF0D007E44F9 /* AddPlanAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanAction.swift; sourceTree = "<group>"; };
 		A52620BB27856B2F008B4C6B /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		A52682C227880CE900009127 /* AddPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewController.swift; sourceTree = "<group>"; };
+		A52682C627880D6E00009127 /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
+		A52682CA27880E0000009127 /* AddPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewModel.swift; sourceTree = "<group>"; };
 		A52950C2277DD81B00334C56 /* PlanDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDto.swift; sourceTree = "<group>"; };
 		A52950C5277DDB6500334C56 /* PlanDtoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDtoMapper.swift; sourceTree = "<group>"; };
 		A52950C7277DDB6D00334C56 /* DtoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoMapper.swift; sourceTree = "<group>"; };
@@ -179,6 +195,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A51CBCA3278ADE1B007E44F9 /* ColorSelector */ = {
+			isa = PBXGroup;
+			children = (
+				A51CBCA1278ADE17007E44F9 /* ColorSelectorView.swift */,
+				A51CBCA4278ADE38007E44F9 /* ColorSelectViewController.swift */,
+			);
+			path = ColorSelector;
+			sourceTree = "<group>";
+		};
+		A52682C127880CDF00009127 /* AddPlanView */ = {
+			isa = PBXGroup;
+			children = (
+				A51CBCA3278ADE1B007E44F9 /* ColorSelector */,
+				A52682C227880CE900009127 /* AddPlanViewController.swift */,
+				A52682C627880D6E00009127 /* AddPlanView.swift */,
+				A52682CA27880E0000009127 /* AddPlanViewModel.swift */,
+				A51CBCA6278ADF0D007E44F9 /* AddPlanAction.swift */,
+			);
+			path = AddPlanView;
+			sourceTree = "<group>";
+		};
 		A52950C1277DD80F00334C56 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +303,7 @@
 			children = (
 				A5B8020527848AF400E010BE /* DateSelectorView */,
 				A54C28DE277CAC91008D256C /* PlanListView */,
+				A52682C127880CDF00009127 /* AddPlanView */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -539,6 +577,8 @@
 				A5E4CB10278297E900A05589 /* DeclarativeView+ViewController.swift */,
 				A5E4CB142782A1D900A05589 /* UIColor+Hex.swift */,
 				A54E15DA278748B900F108CD /* PaddingLabel.swift */,
+				A51CBC9B278ABF8B007E44F9 /* ToolbarTextField.swift */,
+				A51CBC9F278AD406007E44F9 /* DatePickerField.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -814,6 +854,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54C28E0277CACDE008D256C /* Plan.swift in Sources */,
+				A52682CB27880E0000009127 /* AddPlanViewModel.swift in Sources */,
 				A54E15DB278748B900F108CD /* PaddingLabel.swift in Sources */,
 				A5B802102784A58800E010BE /* WeekCalender.swift in Sources */,
 				A52950F1277E2DFB00334C56 /* PlanListViewModel.swift in Sources */,
@@ -826,6 +867,8 @@
 				A599BED2277CB64C005F5B1C /* RealmPlan.swift in Sources */,
 				A52950C3277DD81B00334C56 /* PlanDto.swift in Sources */,
 				A5B8020C27848BB100E010BE /* DateSelector.swift in Sources */,
+				A51CBCA2278ADE17007E44F9 /* ColorSelectorView.swift in Sources */,
+				A52682C327880CE900009127 /* AddPlanViewController.swift in Sources */,
 				A5BB59D6277CA66F0058240E /* PlanListViewController.swift in Sources */,
 				A545A6012786C1E20057809A /* PlanListTableView.swift in Sources */,
 				A52950D3277DEE1D00334C56 /* DefaultFetchPlanListByDateUseCase.swift in Sources */,
@@ -833,20 +876,25 @@
 				A52950C6277DDB6500334C56 /* PlanDtoMapper.swift in Sources */,
 				A52950C8277DDB6D00334C56 /* DtoMapper.swift in Sources */,
 				A52950D7277DF62200334C56 /* Date+DateComponent.swift in Sources */,
+				A51CBC9C278ABF8B007E44F9 /* ToolbarTextField.swift in Sources */,
 				A52950D1277DDFA300334C56 /* PlanRealmStorage.swift in Sources */,
 				A52950CA277DDD6300334C56 /* PlanRepository.swift in Sources */,
+				A51CBCA7278ADF0D007E44F9 /* AddPlanAction.swift in Sources */,
 				A5CCFBAC27871BA1002C37EE /* PlanListCell.swift in Sources */,
 				A5E4CB11278297E900A05589 /* DeclarativeView+ViewController.swift in Sources */,
 				A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */,
 				A5BB59D2277CA66F0058240E /* AppDelegate.swift in Sources */,
 				A5E4CB0C27828F8500A05589 /* AddPlanUseCase.swift in Sources */,
 				A5B01E242784541C000865BF /* PlanListTitleBarAction.swift in Sources */,
+				A52682C727880D6E00009127 /* AddPlanView.swift in Sources */,
 				A5B01E2027844B4C000865BF /* PlanListTitleBar.swift in Sources */,
 				A5BB59D4277CA66F0058240E /* SceneDelegate.swift in Sources */,
 				A54E15E02787533E00F108CD /* DefaultUpdatePlanUseCase.swift in Sources */,
 				A5E4CB0927828F1D00A05589 /* FetchPlanListByDateUseCase.swift in Sources */,
+				A51CBCA0278AD406007E44F9 /* DatePickerField.swift in Sources */,
 				A52950CE277DDEF700334C56 /* Storage.swift in Sources */,
 				A5E4CB172782A4BE00A05589 /* DependencyContainer.swift in Sources */,
+				A51CBCA5278ADE38007E44F9 /* ColorSelectViewController.swift in Sources */,
 				A52950E0277E0FBC00334C56 /* DefaultAddPlanUseCase.swift in Sources */,
 				A52950E5277E173C00334C56 /* PlanListView.swift in Sources */,
 				A5B8020927848B4200E010BE /* DateSelectorDelegate.swift in Sources */,

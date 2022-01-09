@@ -14,8 +14,14 @@ class PlanListViewController: DeclarativeViewController {
     let viewModel: PlanListViewModel
     let disposeBag: DisposeBag = DisposeBag()
     
-    init(viewModel: PlanListViewModel) {
+    let addPlanViewControllerFactory: AddPlanViewControllerFactory
+    
+    init(viewModel: PlanListViewModel,
+         addPlanViewControllerFactory: AddPlanViewControllerFactory) {
+        
         self.viewModel = viewModel
+        self.addPlanViewControllerFactory = addPlanViewControllerFactory
+        
         super.init()
         viewModel.changeDate(date: Date())
     }
@@ -61,7 +67,14 @@ class PlanListViewController: DeclarativeViewController {
     }
     
     func presentAddPlan() {
+        let addPlanViewController = addPlanViewControllerFactory
+            .makeAddPlanViewController(planListViewModel: viewModel)
+        let navigationController = UINavigationController(rootViewController: addPlanViewController)
         
+        navigationController.modalTransitionStyle = .coverVertical
+        navigationController.modalPresentationStyle = .currentContext
+        
+        present(navigationController, animated: true)
     }
     
     func presentSearchPlan() {
@@ -69,3 +82,7 @@ class PlanListViewController: DeclarativeViewController {
     }
 }
 
+protocol AddPlanViewControllerFactory {
+    
+    func makeAddPlanViewController(planListViewModel: PlanListViewModel) -> AddPlanViewController
+}
