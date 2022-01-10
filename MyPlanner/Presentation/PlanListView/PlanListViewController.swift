@@ -93,8 +93,8 @@ class PlanListViewController: DeclarativeViewController {
         
         let navigationController = UINavigationController(rootViewController: editPlanViewController)
         
-        navigationController.modalTransitionStyle = .coverVertical
-        navigationController.modalPresentationStyle = .currentContext
+//        navigationController.modalTransitionStyle = .coverVertical
+//        navigationController.modalPresentationStyle = .currentContext
         
         present(navigationController, animated: true)
     }
