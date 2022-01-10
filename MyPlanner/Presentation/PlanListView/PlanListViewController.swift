@@ -53,6 +53,9 @@ class PlanListViewController: DeclarativeViewController {
             case .searchPlan:
                 print("search plan clicked.")
                 presentSearchPlan()
+            case .editPlan(let index):
+                print("edit plan clicked.")
+                presentEditPlan(at: index)
             default:
                 break
         }
@@ -77,6 +80,10 @@ class PlanListViewController: DeclarativeViewController {
         navigationController.modalPresentationStyle = .currentContext
         
         present(navigationController, animated: true)
+    }
+    
+    func presentEditPlan(at index: Int) {
+        print(index)
     }
     
     func presentSearchPlan() {

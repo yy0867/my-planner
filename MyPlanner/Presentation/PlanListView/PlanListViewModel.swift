@@ -21,6 +21,7 @@ protocol PlanListViewModelAction {
     @objc func presentProfile()
     @objc func presentDateSelector()
     @objc func presentAddPlan()
+    @objc func presentEditPlan(at index: Int)
     @objc func presentSearchPlan()
     func reloadData()
 }
@@ -127,6 +128,7 @@ final class DefaultPlanListViewModel: PlanListViewModel {
     @objc public func presentProfile() { planListViewAction.onNext(.profile) }
     @objc public func presentDateSelector() { planListViewAction.onNext(.dateSelector) }
     @objc public func presentAddPlan() { planListViewAction.onNext(.addPlan) }
+    @objc public func presentEditPlan(at index: Int) { planListViewAction.onNext(.editPlan(index: index)) }
     @objc public func presentSearchPlan() { planListViewAction.onNext(.searchPlan) }
     public func reloadData() { planListViewAction.onNext(.reloadData) }
     

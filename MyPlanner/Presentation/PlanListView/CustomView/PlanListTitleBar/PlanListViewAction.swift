@@ -7,12 +7,12 @@
 
 import Foundation
 
-@objc
-public enum PlanListViewAction: Int {
+public enum PlanListViewAction {
     
     case profile
     case dateSelector
     case addPlan
+    case editPlan(index: Int)
     case searchPlan
     case reloadData
 }

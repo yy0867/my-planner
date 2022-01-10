@@ -54,7 +54,7 @@ class PlanListTableView: UITableView {
 extension PlanListTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.togglePlanAchieve(at: indexPath.row)
+        viewModel.presentEditPlan(at: indexPath.row)
     }
 }
 
@@ -73,7 +73,9 @@ extension PlanListTableView: UITableViewDataSource {
         
         let mode = viewModel.getTimeLineMode(at: indexPath.row)
         let plan = viewModel.getPlan(at: indexPath.row)
-        cell.configureCell(plan: plan, mode: mode)
+        cell.configureCell(plan: plan, mode: mode) { [weak self] in
+            self?.viewModel.togglePlanAchieve(at: indexPath.row)
+        }
         
         return cell
     }

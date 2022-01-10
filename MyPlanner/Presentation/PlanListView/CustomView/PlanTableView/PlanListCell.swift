@@ -25,12 +25,16 @@ class PlanListCell: UITableViewCell {
     // MARK: - Properties
     static let reuseIdentifier = "PlanListCellReuseIdentifier"
     weak var viewModel: PlanListViewModel?
+    var toggleAchieveAction: (() -> ()) = { }
     
     lazy var timeLine: UIButton = {
         let button = UIButton()
         
         button.contentMode = .scaleAspectFit
         button.imageView?.contentMode = .scaleAspectFit
+        button.addTarget(self,
+                         action: #selector(toggleAchieve),
+                         for: .touchUpInside)
         
         return button
     }()
@@ -71,13 +75,21 @@ class PlanListCell: UITableViewCell {
         fatalError("PlanListCell.init(coder:) is called.")
     }
     
-    public func configureCell(plan: Plan, mode: TimeLineMode) {
+    public func configureCell(plan: Plan,
+                              mode: TimeLineMode,
+                              action: @escaping () -> ()) {
+        setTimeLineAction(action)
         setTimeLineMode(mode, achieve: plan.achieve)
         setTimeLabel(of: plan)
         setPlanTitleAndColor(of: plan)
     }
     
-    private func setTimeLineMode(_ mode: TimeLineMode, achieve: Bool) {
+    private func setTimeLineAction(_ action: @escaping () -> ()) {
+        self.toggleAchieveAction = action
+    }
+    
+    private func setTimeLineMode(_ mode: TimeLineMode,
+                                 achieve: Bool) {
         timeLine.setImage(mode.getImage(achieve: achieve),
                           for: .normal)
     }
@@ -94,9 +106,9 @@ class PlanListCell: UITableViewCell {
     }
     
     private func constructHierarchy() {
-        self.addSubview(timeLine)
-        self.addSubview(timeLabel)
-        self.addSubview(planTitle)
+        self.contentView.addSubview(timeLine)
+        self.contentView.addSubview(timeLabel)
+        self.contentView.addSubview(planTitle)
     }
     
     private func activateConstraints() {
@@ -106,7 +118,6 @@ class PlanListCell: UITableViewCell {
     }
     
     private func addTargets() {
-        
     }
     
     private func activateTimeLineConstraints() {
@@ -131,5 +142,10 @@ class PlanListCell: UITableViewCell {
             make.right.equalToSuperview()
             make.top.bottom.equalToSuperview().inset(5)
         }
+    }
+    
+    @objc
+    private func toggleAchieve() {
+        toggleAchieveAction()
     }
 }
