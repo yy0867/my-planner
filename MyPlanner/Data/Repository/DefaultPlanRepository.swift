@@ -61,7 +61,15 @@ class DefaultPlanRepository: PlanRepository {
     
     func delete(id: Plan.Identifier,
                 completion: (Result<Void, Error>) -> Void) {
-        storage.delete(id: id, completion: completion)
+        storage.delete(id: id) { result in
+            switch result {
+                case .success(_):
+                    completion(.success(()))
+                case .failure(let e):
+                    print(e.localizedDescription)
+                    completion(.failure(e))
+            }
+        }
     }
     
 }

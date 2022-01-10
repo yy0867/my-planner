@@ -13,6 +13,7 @@ protocol PlanListViewModelInput {
     
     func changeDate(date: Date)
     func togglePlanAchieve(at index: Int)
+    func selectPlan(at index: Int)
 }
 
 @objc
@@ -30,7 +31,7 @@ protocol PlanListViewModelOutput {
     
     var planListViewAction: PublishSubject<PlanListViewAction> { get }
     var selectedDate: BehaviorRelay<Date> { get }
-//    var week: BehaviorRelay<[Date]> { get }
+    var selectedPlan: BehaviorSubject<Plan?> { get }
     var planList: BehaviorRelay<[Plan]> { get }
     var disposeBag: DisposeBag { get }
     
@@ -115,6 +116,13 @@ final class DefaultPlanListViewModel: PlanListViewModel {
         }
     }
     
+    public func selectPlan(at index: Int) {
+        let plan = getPlan(at: index)
+        print(plan)
+        selectedPlan.onNext(plan)
+//        selectedPlan.accept(plan)
+    }
+    
     private func replacePlan(of id: Int, newPlan: Plan) {
         var updatedPlanList = planList.value
         guard let index = updatedPlanList.firstIndex(where: { $0.id == newPlan.id }) else {
@@ -128,15 +136,22 @@ final class DefaultPlanListViewModel: PlanListViewModel {
     @objc public func presentProfile() { planListViewAction.onNext(.profile) }
     @objc public func presentDateSelector() { planListViewAction.onNext(.dateSelector) }
     @objc public func presentAddPlan() { planListViewAction.onNext(.addPlan) }
-    @objc public func presentEditPlan(at index: Int) { planListViewAction.onNext(.editPlan(index: index)) }
+    @objc public func presentEditPlan(at index: Int) { selectPlan(at: index) }
     @objc public func presentSearchPlan() { planListViewAction.onNext(.searchPlan) }
-    public func reloadData() { planListViewAction.onNext(.reloadData) }
+    public func reloadData() {
+        
+        fetchPlanListUseCase.execute(date: selectedDate.value) { [weak self] plans in
+            guard let strongSelf = self else { return }
+            strongSelf.sortPlansAndAccept(plans)
+            planListViewAction.onNext(.reloadData)
+        }
+    }
     
     // MARK: - Output
 
     public let planListViewAction: PublishSubject<PlanListViewAction> = PublishSubject()
     public let selectedDate: BehaviorRelay<Date> = BehaviorRelay(value: Date())
-//    public let week: BehaviorRelay<[Date]> = BehaviorRelay(value: [])
+    public let selectedPlan: BehaviorSubject<Plan?> = BehaviorSubject(value: nil)
     public let planList: BehaviorRelay<[Plan]> = BehaviorRelay(value: [])
     public let disposeBag: DisposeBag = DisposeBag()
 }

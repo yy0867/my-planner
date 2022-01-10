@@ -29,6 +29,10 @@ class DependencyContainer {
         return DefaultAddPlanUseCase(repository: makePlanRepository())
     }
     
+    func makeDeletePlanUseCase() -> DeletePlanUseCase {
+        return DefaultDeletePlanUseCase(repository: makePlanRepository())
+    }
+    
     // MARK: - Repository
     func makePlanRepository() -> PlanRepository {
         return DefaultPlanRepository(storage: planRealmStorage)
@@ -37,7 +41,8 @@ class DependencyContainer {
     // MARK: - PlanListView
     func makePlanListViewController() -> PlanListViewController {
         return PlanListViewController(viewModel: makePlanListViewModel(),
-                                      addPlanViewControllerFactory: self)
+                                      addPlanViewControllerFactory: self,
+                                      editPlanViewControllerFactory: self)
     }
     
     func makePlanListViewModel() -> PlanListViewModel {
@@ -58,6 +63,22 @@ extension DependencyContainer: AddPlanViewControllerFactory {
     func makeAddPlanViewModel(planListViewModel: PlanListViewModel) -> AddPlanViewModel {
         return DefaultAddPlanViewModel(addPlanUseCase: makeAddPlanUseCase(),
                                        planListViewModel: planListViewModel)
+    }
+}
+
+extension DependencyContainer: EditPlanViewControllerFactory {
+    
+    // MARK: - EditPlanView
+    func makeEditPlanViewController(planListViewModel: PlanListViewModel) -> EditPlanViewController {
+        let editPlanViewModel = makeEditPlanViewModel(planListViewModel: planListViewModel)
+        return EditPlanViewController(viewModel: editPlanViewModel,
+                                      colorSelectorViewController: makeColorSelectorViewController())
+    }
+    
+    func makeEditPlanViewModel(planListViewModel: PlanListViewModel) -> EditPlanViewModel {
+        return DefaultEditPlanViewModel(planListViewModel: planListViewModel,
+                                        updatePlanUseCase: makeUpdatePlanUseCase(),
+                                        deletePlanUseCase: makeDeletePlanUseCase())
     }
 }
 

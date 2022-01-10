@@ -31,7 +31,7 @@ protocol AddPlanViewModelAction {
 
 protocol AddPlanViewModelOutput {
     
-    var addPlanAction: BehaviorRelay<AddPlanAction> { get }
+    var addPlanAction: BehaviorRelay<ColorSelectableAction> { get }
     
     func allFieldValid() -> Observable<Bool>
     func getSelectedDate() -> BehaviorRelay<Date>
@@ -52,7 +52,7 @@ class DefaultAddPlanViewModel: AddPlanViewModel {
     let inputDate: BehaviorRelay<Date>
     let inputTime: BehaviorRelay<Date> = BehaviorRelay<Date>(value: .createTime(hour: 10, minute: 00))
     let inputNotification: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
-    let addPlanAction: BehaviorRelay<AddPlanAction> = BehaviorRelay<AddPlanAction>(value: .none)
+    let addPlanAction: BehaviorRelay<ColorSelectableAction> = BehaviorRelay<ColorSelectableAction>(value: .none)
     
     // MARK: - Methods
     init(addPlanUseCase: AddPlanUseCase,

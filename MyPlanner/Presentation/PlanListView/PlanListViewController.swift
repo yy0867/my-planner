@@ -15,12 +15,15 @@ class PlanListViewController: DeclarativeViewController {
     let disposeBag: DisposeBag = DisposeBag()
     
     let addPlanViewControllerFactory: AddPlanViewControllerFactory
+    let editPlanViewControllerFactory: EditPlanViewControllerFactory
     
     init(viewModel: PlanListViewModel,
-         addPlanViewControllerFactory: AddPlanViewControllerFactory) {
+         addPlanViewControllerFactory: AddPlanViewControllerFactory,
+         editPlanViewControllerFactory: EditPlanViewControllerFactory) {
         
         self.viewModel = viewModel
         self.addPlanViewControllerFactory = addPlanViewControllerFactory
+        self.editPlanViewControllerFactory = editPlanViewControllerFactory
         
         super.init()
         viewModel.changeDate(date: Date())
@@ -36,6 +39,11 @@ class PlanListViewController: DeclarativeViewController {
         viewModel.planListViewAction.subscribe(onNext: { [weak self] action in
             guard let strongSelf = self else { return }
             strongSelf.handleAction(of: action)
+        }).disposed(by: disposeBag)
+        
+        viewModel.selectedPlan.subscribe(onNext: { [weak self] plan in
+            guard let strongSelf = self else { return }
+            strongSelf.presentEditPlan()
         }).disposed(by: disposeBag)
     }
     
@@ -53,9 +61,6 @@ class PlanListViewController: DeclarativeViewController {
             case .searchPlan:
                 print("search plan clicked.")
                 presentSearchPlan()
-            case .editPlan(let index):
-                print("edit plan clicked.")
-                presentEditPlan(at: index)
             default:
                 break
         }
@@ -82,8 +87,16 @@ class PlanListViewController: DeclarativeViewController {
         present(navigationController, animated: true)
     }
     
-    func presentEditPlan(at index: Int) {
-        print(index)
+    func presentEditPlan() {
+        let editPlanViewController = editPlanViewControllerFactory
+            .makeEditPlanViewController(planListViewModel: viewModel)
+        
+        let navigationController = UINavigationController(rootViewController: editPlanViewController)
+        
+        navigationController.modalTransitionStyle = .coverVertical
+        navigationController.modalPresentationStyle = .currentContext
+        
+        present(navigationController, animated: true)
     }
     
     func presentSearchPlan() {
@@ -98,4 +111,9 @@ class PlanListViewController: DeclarativeViewController {
 protocol AddPlanViewControllerFactory {
     
     func makeAddPlanViewController(planListViewModel: PlanListViewModel) -> AddPlanViewController
+}
+
+protocol EditPlanViewControllerFactory {
+    
+    func makeEditPlanViewController(planListViewModel: PlanListViewModel) -> EditPlanViewController
 }

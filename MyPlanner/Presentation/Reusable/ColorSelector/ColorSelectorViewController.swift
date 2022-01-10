@@ -13,13 +13,14 @@ class ColorSelectorViewController: DeclarativeViewController {
     // MARK: - Properties
     let viewModel: ColorSelectorViewModel
     let disposeBag = DisposeBag()
+    
     weak var delegate: ColorSelectorDelegate?
+    weak var dataSource: ColorSelectorDataSource?
     
     lazy var doneButton: UIBarButtonItem = {
         let button = UIButton()
         
         button.setTitle("선택", for: .normal)
-        button.tintColor = Color.accentColor
         button.configuration = .filled()
         button.configuration?.cornerStyle = .capsule
         button.addTarget(self,
@@ -41,7 +42,18 @@ class ColorSelectorViewController: DeclarativeViewController {
         configureNavigationBar()
         navigationController?.navigationBar.tintColor = Color.black
         self.view = ColorSelectorView(viewModel: viewModel)
+        
+        handleDataSource()
         bind(to: viewModel)
+    }
+    
+    private func handleDataSource() {
+        
+        if let dataSource = dataSource {
+            viewModel.selectedColor.accept(dataSource.setInitialColor())
+        } else {
+            viewModel.selectedColor.accept(Color.accentColor.toHexStr())
+        }
     }
     
     private func bind(to viewModel: ColorSelectorViewModel) {
