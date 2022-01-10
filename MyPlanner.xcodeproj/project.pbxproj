@@ -42,6 +42,7 @@
 		A54E15E02787533E00F108CD /* DefaultUpdatePlanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E15DF2787533E00F108CD /* DefaultUpdatePlanUseCase.swift */; };
 		A54E15E22787534400F108CD /* UpdatePlanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E15E12787534400F108CD /* UpdatePlanUseCase.swift */; };
 		A564ED182782074300972349 /* PlanListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564ED172782074300972349 /* PlanListViewModelTests.swift */; };
+		A567EB76278C1BCB005D3AD6 /* ColorSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567EB75278C1BCB005D3AD6 /* ColorSelectorDelegate.swift */; };
 		A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */; };
 		A599BED2277CB64C005F5B1C /* RealmPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED1277CB64C005F5B1C /* RealmPlan.swift */; };
 		A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED3277CB686005F5B1C /* Identifiable.swift */; };
@@ -131,6 +132,7 @@
 		A54E15DF2787533E00F108CD /* DefaultUpdatePlanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUpdatePlanUseCase.swift; sourceTree = "<group>"; };
 		A54E15E12787534400F108CD /* UpdatePlanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePlanUseCase.swift; sourceTree = "<group>"; };
 		A564ED172782074300972349 /* PlanListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListViewModelTests.swift; sourceTree = "<group>"; };
+		A567EB75278C1BCB005D3AD6 /* ColorSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorDelegate.swift; sourceTree = "<group>"; };
 		A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		A599BED1277CB64C005F5B1C /* RealmPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlan.swift; sourceTree = "<group>"; };
 		A599BED3277CB686005F5B1C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				A51CBCA8278B1D8A007E44F9 /* ColorSelectorViewModel.swift */,
 				A51CBCAA278B1EEC007E44F9 /* ColorSelectorAction.swift */,
 				A51CBCAC278B2ABE007E44F9 /* ColorCell.swift */,
+				A567EB75278C1BCB005D3AD6 /* ColorSelectorDelegate.swift */,
 			);
 			path = ColorSelector;
 			sourceTree = "<group>";
@@ -216,7 +219,6 @@
 		A52682C127880CDF00009127 /* AddPlanView */ = {
 			isa = PBXGroup;
 			children = (
-				A51CBCA3278ADE1B007E44F9 /* ColorSelector */,
 				A52682C227880CE900009127 /* AddPlanViewController.swift */,
 				A52682C627880D6E00009127 /* AddPlanView.swift */,
 				A52682CA27880E0000009127 /* AddPlanViewModel.swift */,
@@ -310,6 +312,7 @@
 		A54C28D5277CABAA008D256C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A567EB77278C1C49005D3AD6 /* Reusable */,
 				A5B8020527848AF400E010BE /* DateSelectorView */,
 				A54C28DE277CAC91008D256C /* PlanListView */,
 				A52682C127880CDF00009127 /* AddPlanView */,
@@ -423,6 +426,14 @@
 				A564ED172782074300972349 /* PlanListViewModelTests.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A567EB77278C1C49005D3AD6 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				A51CBCA3278ADE1B007E44F9 /* ColorSelector */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		A599BEC9277CB479005F5B1C /* Realm */ = {
@@ -869,6 +880,7 @@
 				A5B802102784A58800E010BE /* WeekCalender.swift in Sources */,
 				A52950F1277E2DFB00334C56 /* PlanListViewModel.swift in Sources */,
 				A5E4CB132782A1A300A05589 /* Color.swift in Sources */,
+				A567EB76278C1BCB005D3AD6 /* ColorSelectorDelegate.swift in Sources */,
 				A5B8020727848B0200E010BE /* DateSelectorViewController.swift in Sources */,
 				A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */,
 				A52950CC277DDEC700334C56 /* DefaultPlanRepository.swift in Sources */,

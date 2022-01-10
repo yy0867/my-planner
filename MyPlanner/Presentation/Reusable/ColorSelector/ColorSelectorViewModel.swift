@@ -36,22 +36,17 @@ protocol ColorSelectorViewModel: ColorSelectorViewModelInput,
 class DefaultColorSelectorViewModel: ColorSelectorViewModel {
     
     // MARK: - Properties
-    let addPlanViewModel: AddPlanViewModel
-    
     let colorSelectorAction = PublishSubject<ColorSelectorAction>()
     let selectedColor = BehaviorRelay<Plan.Color>(value: Color.accentColor.toHexStr())
     let colorCollection = Color.getColorAssets()
     
     // MARK: - Methods
-    init(addPlanViewModel: AddPlanViewModel) {
-        self.addPlanViewModel = addPlanViewModel
-    }
+    init() { }
     
     // MARK: - Input
     func selectColor(at index: Int) {
         let color = colorCollection[index]
         selectedColor.accept(color)
-        addPlanViewModel.changeColor(color)
     }
     
     // MARK: - Action

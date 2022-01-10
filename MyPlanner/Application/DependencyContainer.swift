@@ -52,7 +52,7 @@ extension DependencyContainer: AddPlanViewControllerFactory {
     func makeAddPlanViewController(planListViewModel: PlanListViewModel) -> AddPlanViewController {
         let addPlanViewModel = makeAddPlanViewModel(planListViewModel: planListViewModel)
         return AddPlanViewController(viewModel: addPlanViewModel,
-                                     colorSelectorViewControllerFactory: self)
+                                     colorSelectorViewController: makeColorSelectorViewController())
     }
     
     func makeAddPlanViewModel(planListViewModel: PlanListViewModel) -> AddPlanViewModel {
@@ -61,15 +61,15 @@ extension DependencyContainer: AddPlanViewControllerFactory {
     }
 }
 
-extension DependencyContainer: ColorSelectorViewControllerFactory {
+extension DependencyContainer {
     
     // MARK: - ColorSelectorView
-    func makeColorSelectorViewController(addPlanViewModel: AddPlanViewModel) -> ColorSelectorViewController {
-        let colorSelectorViewModel = makeColorSelectorViewModel(addPlanViewModel: addPlanViewModel)
+    func makeColorSelectorViewController() -> ColorSelectorViewController {
+        let colorSelectorViewModel = makeColorSelectorViewModel()
         return ColorSelectorViewController(viewModel: colorSelectorViewModel)
     }
     
-    func makeColorSelectorViewModel(addPlanViewModel: AddPlanViewModel) -> ColorSelectorViewModel {
-        return DefaultColorSelectorViewModel(addPlanViewModel: addPlanViewModel)
+    func makeColorSelectorViewModel() -> ColorSelectorViewModel {
+        return DefaultColorSelectorViewModel()
     }
 }

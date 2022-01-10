@@ -12,7 +12,7 @@ class AddPlanViewController: DeclarativeViewController {
     
     // MARK: - Properties
     let viewModel: AddPlanViewModel
-    let colorSelectorViewControllerFactory: ColorSelectorViewControllerFactory
+    let colorSelectorViewController: ColorSelectorViewController
     let disposeBag = DisposeBag()
     
     lazy var dismissButton: UIBarButtonItem = {
@@ -42,9 +42,9 @@ class AddPlanViewController: DeclarativeViewController {
     
     // MARK: - Methods
     init(viewModel: AddPlanViewModel,
-         colorSelectorViewControllerFactory: ColorSelectorViewControllerFactory) {
+         colorSelectorViewController: ColorSelectorViewController) {
         self.viewModel = viewModel
-        self.colorSelectorViewControllerFactory = colorSelectorViewControllerFactory
+        self.colorSelectorViewController = colorSelectorViewController
         super.init()
     }
     
@@ -87,10 +87,8 @@ class AddPlanViewController: DeclarativeViewController {
         }).disposed(by: disposeBag)
     }
     
-    private func pushColorSelectorViewController() {
-        let colorSelectorViewController = colorSelectorViewControllerFactory
-            .makeColorSelectorViewController(addPlanViewModel: viewModel)
-        
+    private func pushColorSelectorViewController() {        
+        colorSelectorViewController.delegate = self
         navigationItem.backButtonTitle = ""
         navigationController?.pushViewController(colorSelectorViewController,
                                                  animated: true)
@@ -112,7 +110,9 @@ class AddPlanViewController: DeclarativeViewController {
     }
 }
 
-protocol ColorSelectorViewControllerFactory {
+extension AddPlanViewController: ColorSelectorDelegate {
     
-    func makeColorSelectorViewController(addPlanViewModel: AddPlanViewModel) -> ColorSelectorViewController
+    func colorSelector(didSelectColor selectedColor: Plan.Color) {
+        viewModel.changeColor(selectedColor)
+    }
 }

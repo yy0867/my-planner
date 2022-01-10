@@ -13,6 +13,7 @@ class ColorSelectorViewController: DeclarativeViewController {
     // MARK: - Properties
     let viewModel: ColorSelectorViewModel
     let disposeBag = DisposeBag()
+    weak var delegate: ColorSelectorDelegate?
     
     lazy var doneButton: UIBarButtonItem = {
         let button = UIButton()
@@ -57,6 +58,7 @@ class ColorSelectorViewController: DeclarativeViewController {
         
         viewModel.selectedColor.subscribe(onNext: { [weak self] color in
             guard let strongSelf = self else { return }
+            strongSelf.delegate?.colorSelector(didSelectColor: color)
             strongSelf.doneButton.customView?.tintColor = UIColor(color)
         }).disposed(by: disposeBag)
     }
@@ -71,3 +73,9 @@ class ColorSelectorViewController: DeclarativeViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
+protocol ColorSelectorViewControllerFactory {
+    
+    func makeColorSelectorViewController() -> ColorSelectorViewController
+}
+
