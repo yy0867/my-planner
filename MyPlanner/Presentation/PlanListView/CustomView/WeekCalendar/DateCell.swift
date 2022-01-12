@@ -12,7 +12,7 @@ import JTAppleCalendar
 class DateCell: JTACDayCell {
     
     // MARK: - Properties
-    static let reuseIdentifier: String = "DateCellReuseIdentifier"
+    static let reuseIdentifier: String = String(describing: DateCell.self)
     
     lazy var day: UILabel = {
         let label = UILabel()

@@ -10,7 +10,7 @@ import SnapKit
 
 class ColorCell: UICollectionViewCell {
     
-    static let reuseIdentifier = "ColorCellReuseIdentifier"
+    static let reuseIdentifier = String(describing: ColorCell.self)
     
     lazy var colorCell: UIView = {
         let view = UIView()

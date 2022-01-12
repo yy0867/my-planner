@@ -27,8 +27,8 @@ class DependencyContainer {
     }
     
     // MARK: - UseCase
-    func makeFetchPlanListByDateUseCase() -> FetchPlanListByDateUseCase {
-        return DefaultFetchPlanListByDateUseCase(repository: makePlanRepository())
+    func makeFetchPlanListUseCase() -> FetchPlanListUseCase {
+        return DefaultFetchPlanListUseCase(repository: makePlanRepository())
     }
     
     func makeUpdatePlanUseCase() -> UpdatePlanUseCase {
@@ -47,11 +47,12 @@ class DependencyContainer {
     func makePlanListViewController() -> PlanListViewController {
         return PlanListViewController(viewModel: makePlanListViewModel(),
                                       addPlanViewControllerFactory: self,
-                                      editPlanViewControllerFactory: self)
+                                      editPlanViewControllerFactory: self,
+                                      searchPlanViewControllerFactory: self)
     }
     
     func makePlanListViewModel() -> PlanListViewModel {
-        return DefaultPlanListViewModel(fetchPlanListUseCase: makeFetchPlanListByDateUseCase(),
+        return DefaultPlanListViewModel(fetchPlanListUseCase: makeFetchPlanListUseCase(),
                                         updatePlanUseCase: makeUpdatePlanUseCase())
     }
 }
@@ -84,6 +85,20 @@ extension DependencyContainer: EditPlanViewControllerFactory {
         return DefaultEditPlanViewModel(planListViewModel: planListViewModel,
                                         updatePlanUseCase: makeUpdatePlanUseCase(),
                                         deletePlanUseCase: makeDeletePlanUseCase())
+    }
+}
+
+extension DependencyContainer: SearchPlanViewControllerFactory {
+    
+    // MARK: - SearchPlanView
+    func makeSearchPlanViewController(planListViewModel: PlanListViewModel) -> SearchPlanViewController {
+        let searchPlanViewModel = makeSearchPlanViewModel(planListViewModel: planListViewModel)
+        return SearchPlanViewController(viewModel: searchPlanViewModel)
+    }
+    
+    func makeSearchPlanViewModel(planListViewModel: PlanListViewModel) -> SearchPlanViewModel {
+        return DefaultSearchPlanViewModel(fetchPlanListUseCase: makeFetchPlanListUseCase(),
+                                          planListViewModel: planListViewModel)
     }
 }
 

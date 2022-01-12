@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MaterialComponents.MaterialBottomSheet
 
 class PlanListViewController: DeclarativeViewController {
 
@@ -16,14 +17,17 @@ class PlanListViewController: DeclarativeViewController {
     
     let addPlanViewControllerFactory: AddPlanViewControllerFactory
     let editPlanViewControllerFactory: EditPlanViewControllerFactory
+    let searchPlanViewControllerFactory: SearchPlanViewControllerFactory
     
     init(viewModel: PlanListViewModel,
          addPlanViewControllerFactory: AddPlanViewControllerFactory,
-         editPlanViewControllerFactory: EditPlanViewControllerFactory) {
+         editPlanViewControllerFactory: EditPlanViewControllerFactory,
+         searchPlanViewControllerFactory: SearchPlanViewControllerFactory) {
         
         self.viewModel = viewModel
         self.addPlanViewControllerFactory = addPlanViewControllerFactory
         self.editPlanViewControllerFactory = editPlanViewControllerFactory
+        self.searchPlanViewControllerFactory = searchPlanViewControllerFactory
         
         super.init()
         viewModel.changeDate(date: Date())
@@ -72,8 +76,12 @@ class PlanListViewController: DeclarativeViewController {
     
     func presentDateSelector() {
         let vc = DateSelectorViewController(viewModel: viewModel)
+        let bottomSheet = MDCBottomSheetController(contentViewController: vc)
         
-        present(vc, animated: true, completion: nil)
+        bottomSheet.mdc_bottomSheetPresentationController?
+            .preferredSheetHeight = UIScreen.main.bounds.height * (2 / 3)
+        
+        present(bottomSheet, animated: true, completion: nil)
     }
     
     func presentAddPlan() {
@@ -100,7 +108,13 @@ class PlanListViewController: DeclarativeViewController {
     }
     
     func presentSearchPlan() {
+        let searchPlanViewController = searchPlanViewControllerFactory
+            .makeSearchPlanViewController(planListViewModel: viewModel)
         
+        searchPlanViewController.modalTransitionStyle = .crossDissolve
+        searchPlanViewController.modalPresentationStyle = .currentContext
+        
+        present(searchPlanViewController, animated: true, completion: nil)
     }
     
     func reloadData() {
@@ -116,4 +130,9 @@ protocol AddPlanViewControllerFactory {
 protocol EditPlanViewControllerFactory {
     
     func makeEditPlanViewController(planListViewModel: PlanListViewModel) -> EditPlanViewController
+}
+
+protocol SearchPlanViewControllerFactory {
+    
+    func makeSearchPlanViewController(planListViewModel: PlanListViewModel) -> SearchPlanViewController
 }

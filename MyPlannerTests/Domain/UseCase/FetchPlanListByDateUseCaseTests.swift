@@ -1,5 +1,5 @@
 //
-//  FetchPlanListByDateUseCase.swift
+//  FetchPlanListUseCase.swift
 //  MyPlannerTests
 //
 //  Created by 김세영 on 2021/12/31.
@@ -9,17 +9,19 @@ import Foundation
 import XCTest
 @testable import MyPlanner
 
-class FetchPlanListByDateUseCaseTests: XCTestCase {
+class FetchPlanListUseCaseTests: XCTestCase {
     
     let repository: DefaultPlanRepository = {
         let dtoMapper = PlanDtoMapper()
+        let notificationCenter = DefaultPlanNotificationCenter()
         let storage = PlanRealmStorage(dtoMapper: dtoMapper)
-        return DefaultPlanRepository(storage: storage)
+        return DefaultPlanRepository(storage: storage,
+                                     notificationCenter: notificationCenter)
     }()
     
     func testExecute() {
         // given
-        let useCase = DefaultFetchPlanListByDateUseCase(repository: repository)
+        let useCase = DefaultFetchPlanListUseCase(repository: repository)
         let date = Date.createDate(year: 2022,
                                    month: 1,
                                    day: 10)

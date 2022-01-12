@@ -1,5 +1,34 @@
 PODS:
   - JTAppleCalendar (8.0.3)
+  - MaterialComponents/Availability (124.2.0)
+  - MaterialComponents/BottomSheet (124.2.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - MaterialComponents/Elevation (124.2.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (124.2.0)
+  - MaterialComponents/private/Color (124.2.0):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/KeyboardWatcher (124.2.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (124.2.0)
+  - MaterialComponents/ShadowElevations (124.2.0)
+  - MaterialComponents/ShadowLayer (124.2.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/ShapeLibrary (124.2.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
+  - MaterialComponents/Shapes (124.2.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
   - Realm (10.20.1):
     - Realm/Headers (= 10.20.1)
   - Realm/Headers (10.20.1)
@@ -19,6 +48,7 @@ PODS:
 
 DEPENDENCIES:
   - JTAppleCalendar
+  - MaterialComponents/BottomSheet
   - RealmSwift (~> 10)
   - RxBlocking (= 6.2.0)
   - RxCocoa (= 6.2.0)
@@ -29,6 +59,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - JTAppleCalendar
+    - MaterialComponents
     - Realm
     - RealmSwift
     - RxBlocking
@@ -40,6 +71,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
+  MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   Realm: fac5ecd031fcb81171627b74944c885662d4b266
   RealmSwift: 9b02d25acb46a14756bde9893abb99e2e3675923
   RxBlocking: 0b29f7d2079109a8de49c411381bed7c33ef1eeb
@@ -49,6 +81,6 @@ SPEC CHECKSUMS:
   RxTest: 0c692fa672b694373ba86d2b00033595297a2831
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 3ece107a4950c70081c353f1ee4df3961bf1d4fd
+PODFILE CHECKSUM: 42542515ed0855aaf3fe1bd9f4c7faf0b349fe46
 
 COCOAPODS: 1.11.2

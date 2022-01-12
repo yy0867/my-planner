@@ -23,7 +23,7 @@ class PlanListCell: UITableViewCell {
     }
     
     // MARK: - Properties
-    static let reuseIdentifier = "PlanListCellReuseIdentifier"
+    static let reuseIdentifier = String(describing: PlanListCell.self)
     weak var viewModel: PlanListViewModel?
     var toggleAchieveAction: (() -> ()) = { }
     
@@ -139,8 +139,8 @@ class PlanListCell: UITableViewCell {
     private func activatePlanTitleConstraints() {
         planTitle.snp.makeConstraints { make in
             make.left.equalTo(timeLabel.snp.right).offset(15)
-            make.right.equalToSuperview()
-            make.top.bottom.equalToSuperview().inset(5)
+            make.right.equalToSuperview().inset(15)
+            make.top.bottom.equalToSuperview().inset(15)
         }
     }
     

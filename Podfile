@@ -11,6 +11,7 @@ target 'MyPlanner' do
   pod 'RxCocoa', '6.2.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'JTAppleCalendar'
+  pod 'MaterialComponents/BottomSheet'
 
   target 'MyPlannerTests' do
     inherit! :search_paths

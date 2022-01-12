@@ -98,7 +98,7 @@ extension PlanRealmStorage {
             }
             
             if let name = dto.name {
-                if plan.name != name { return false }
+                if !plan.name.contains(name) { return false }
             }
             
             if let date = dto.date {
@@ -106,6 +106,10 @@ extension PlanRealmStorage {
                 if !Calendar(identifier: .gregorian).isDate(date, inSameDayAs: plan.date) {
                     return false
                 }
+            }
+            
+            if let color = dto.color {
+                if plan.color != color { return false }
             }
             
             return true

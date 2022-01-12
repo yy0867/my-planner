@@ -46,10 +46,10 @@ protocol PlanListViewModel: PlanListViewModelInput,
 final class DefaultPlanListViewModel: PlanListViewModel {
     
     // MARK: - Properties
-    private let fetchPlanListUseCase: FetchPlanListByDateUseCase
+    private let fetchPlanListUseCase: FetchPlanListUseCase
     private let updatePlanUseCase: UpdatePlanUseCase
     
-    init(fetchPlanListUseCase: FetchPlanListByDateUseCase,
+    init(fetchPlanListUseCase: FetchPlanListUseCase,
          updatePlanUseCase: UpdatePlanUseCase) {
         self.fetchPlanListUseCase = fetchPlanListUseCase
         self.updatePlanUseCase = updatePlanUseCase

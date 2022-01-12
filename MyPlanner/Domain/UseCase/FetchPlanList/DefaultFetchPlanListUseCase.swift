@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DefaultFetchPlanListByDateUseCase: FetchPlanListByDateUseCase {
+class DefaultFetchPlanListUseCase: FetchPlanListUseCase {
     
     // MARK: - Property
     let repository: PlanRepository
@@ -17,10 +17,15 @@ class DefaultFetchPlanListByDateUseCase: FetchPlanListByDateUseCase {
     }
     
     // MARK: - Methods
-    func execute(date: Date, completion: ([Plan]) -> Void) {
-        let searchDto = PlanDto.Search(id: nil,
-                                       name: nil,
-                                       date: date)
+    func execute(id: Plan.Identifier? = nil,
+                 name: String? = nil,
+                 date: Date? = nil,
+                 color: Plan.Color? = nil,
+                 completion: ([Plan]) -> Void) {
+        let searchDto = PlanDto.Search(id: id,
+                                       name: name,
+                                       date: date,
+                                       color: color)
         
         repository.search(dto: searchDto) { result in
             switch result {

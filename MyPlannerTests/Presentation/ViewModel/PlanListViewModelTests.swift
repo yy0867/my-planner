@@ -26,7 +26,7 @@ class PlanListViewModelTests: XCTestCase {
         return plans
     }()
     
-    class MockFetchPlanListByDateUseCase: FetchPlanListByDateUseCase {
+    class MockFetchPlanListUseCase: FetchPlanListUseCase {
         
         let plans: [Plan]
         
@@ -42,7 +42,7 @@ class PlanListViewModelTests: XCTestCase {
     
     func test_WeekAndPlanListChanges_When_SelectedDateUpdated() {
         // given
-        let useCase = MockFetchPlanListByDateUseCase(plans: planStubs)
+        let useCase = MockFetchPlanListUseCase(plans: planStubs)
         let expectation = self.expectation(description: "plan list viewmodel -> fetch success")
         let range: Int = 3 // Range must be 1 ~ 10
         var response: [Plan] = []

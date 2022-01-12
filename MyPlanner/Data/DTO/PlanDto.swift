@@ -46,7 +46,7 @@ struct PlanDto {
         let id: Plan.Identifier?
         let name: String?
         let date: Date?
-        // let color: Plan.Color
+         let color: Plan.Color?
         // let notification: Bool
         // let achieve: Bool
     }
