@@ -48,6 +48,7 @@
 		A567EB7E278C208D005D3AD6 /* EditPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567EB7D278C208D005D3AD6 /* EditPlanViewModel.swift */; };
 		A567EB82278C23A9005D3AD6 /* DefaultDeletePlanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567EB81278C225F005D3AD6 /* DefaultDeletePlanUseCase.swift */; };
 		A567EB83278C23A9005D3AD6 /* DeletePlanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567EB80278C225F005D3AD6 /* DeletePlanUseCase.swift */; };
+		A57475FE278D4695009FB281 /* AddPlanViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57475FD278D4695009FB281 /* AddPlanViewModelTests.swift */; };
 		A599BEC8277CB2DB005F5B1C /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */; };
 		A599BED2277CB64C005F5B1C /* RealmPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED1277CB64C005F5B1C /* RealmPlan.swift */; };
 		A599BED4277CB686005F5B1C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BED3277CB686005F5B1C /* Identifiable.swift */; };
@@ -65,6 +66,8 @@
 		A5BB59DB277CA6700058240E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5BB59DA277CA6700058240E /* Assets.xcassets */; };
 		A5BB59DE277CA6700058240E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BB59DC277CA6700058240E /* LaunchScreen.storyboard */; };
 		A5BB59E9277CA6700058240E /* MyPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB59E8277CA6700058240E /* MyPlannerTests.swift */; };
+		A5BD3AC9278DA4960043B266 /* PlanNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD3AC8278DA4960043B266 /* PlanNotificationCenter.swift */; };
+		A5BD3ACB278DA4D20043B266 /* DefaultPlanNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD3ACA278DA4D20043B266 /* DefaultPlanNotificationCenter.swift */; };
 		A5CCFBAC27871BA1002C37EE /* PlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCFBAB27871BA1002C37EE /* PlanListCell.swift */; };
 		A5E4CB0927828F1D00A05589 /* FetchPlanListByDateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E4CB0827828F1D00A05589 /* FetchPlanListByDateUseCase.swift */; };
 		A5E4CB0C27828F8500A05589 /* AddPlanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E4CB0B27828F8500A05589 /* AddPlanUseCase.swift */; };
@@ -144,6 +147,7 @@
 		A567EB7D278C208D005D3AD6 /* EditPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanViewModel.swift; sourceTree = "<group>"; };
 		A567EB80278C225F005D3AD6 /* DeletePlanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlanUseCase.swift; sourceTree = "<group>"; };
 		A567EB81278C225F005D3AD6 /* DefaultDeletePlanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDeletePlanUseCase.swift; sourceTree = "<group>"; };
+		A57475FD278D4695009FB281 /* AddPlanViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewModelTests.swift; sourceTree = "<group>"; };
 		A599BEC7277CB2DB005F5B1C /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		A599BED1277CB64C005F5B1C /* RealmPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlan.swift; sourceTree = "<group>"; };
 		A599BED3277CB686005F5B1C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 		A5BB59E4277CA6700058240E /* MyPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BB59E8277CA6700058240E /* MyPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerTests.swift; sourceTree = "<group>"; };
 		A5BB59EE277CA6700058240E /* MyPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BD3AC8278DA4960043B266 /* PlanNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanNotificationCenter.swift; sourceTree = "<group>"; };
+		A5BD3ACA278DA4D20043B266 /* DefaultPlanNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlanNotificationCenter.swift; sourceTree = "<group>"; };
 		A5CCFBAB27871BA1002C37EE /* PlanListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListCell.swift; sourceTree = "<group>"; };
 		A5E4CB0827828F1D00A05589 /* FetchPlanListByDateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlanListByDateUseCase.swift; sourceTree = "<group>"; };
 		A5E4CB0B27828F8500A05589 /* AddPlanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanUseCase.swift; sourceTree = "<group>"; };
@@ -337,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				A54C28E4277CB17D008D256C /* Repository */,
+				A5BD3AC7278DA4650043B266 /* UserNotification */,
 				A52950C1277DD80F00334C56 /* DTO */,
 				A54C28DA277CABE1008D256C /* Entity */,
 				A54C28E7277CB21E008D256C /* PersistentStorage */,
@@ -438,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				A564ED172782074300972349 /* PlanListViewModelTests.swift */,
+				A57475FD278D4695009FB281 /* AddPlanViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -604,6 +612,15 @@
 				A52950DD277DFEA600334C56 /* MyPlannerUITests.swift */,
 			);
 			path = MyPlannerUITests;
+			sourceTree = "<group>";
+		};
+		A5BD3AC7278DA4650043B266 /* UserNotification */ = {
+			isa = PBXGroup;
+			children = (
+				A5BD3AC8278DA4960043B266 /* PlanNotificationCenter.swift */,
+				A5BD3ACA278DA4D20043B266 /* DefaultPlanNotificationCenter.swift */,
+			);
+			path = UserNotification;
 			sourceTree = "<group>";
 		};
 		A5E4CB0727828EAB00A05589 /* FetchPlanList */ = {
@@ -948,6 +965,7 @@
 				A5BB59D2277CA66F0058240E /* AppDelegate.swift in Sources */,
 				A5E4CB0C27828F8500A05589 /* AddPlanUseCase.swift in Sources */,
 				A5B01E242784541C000865BF /* PlanListViewAction.swift in Sources */,
+				A5BD3ACB278DA4D20043B266 /* DefaultPlanNotificationCenter.swift in Sources */,
 				A52682C727880D6E00009127 /* AddPlanView.swift in Sources */,
 				A5B01E2027844B4C000865BF /* PlanListTitleBar.swift in Sources */,
 				A5BB59D4277CA66F0058240E /* SceneDelegate.swift in Sources */,
@@ -958,6 +976,7 @@
 				A52950CE277DDEF700334C56 /* Storage.swift in Sources */,
 				A5E4CB172782A4BE00A05589 /* DependencyContainer.swift in Sources */,
 				A51CBCA5278ADE38007E44F9 /* ColorSelectorViewController.swift in Sources */,
+				A5BD3AC9278DA4960043B266 /* PlanNotificationCenter.swift in Sources */,
 				A52950E0277E0FBC00334C56 /* DefaultAddPlanUseCase.swift in Sources */,
 				A52950E5277E173C00334C56 /* PlanListView.swift in Sources */,
 				A5FA96BC278C40F0003A353C /* ColorSelectorDataSource.swift in Sources */,
@@ -972,6 +991,7 @@
 				A599BEF1277CC661005F5B1C /* Plan+Stub.swift in Sources */,
 				A564ED182782074300972349 /* PlanListViewModelTests.swift in Sources */,
 				A52950D9277DF89000334C56 /* PlanRepositoryTests.swift in Sources */,
+				A57475FE278D4695009FB281 /* AddPlanViewModelTests.swift in Sources */,
 				A52950E3277E118900334C56 /* FetchPlanListByDateUseCaseTests.swift in Sources */,
 				A52950D5277DF1D100334C56 /* RealmStorageTests.swift in Sources */,
 				A5B8020E278497A800E010BE /* Date+DateComponentTests.swift in Sources */,

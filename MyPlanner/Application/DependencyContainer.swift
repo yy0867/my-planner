@@ -15,6 +15,16 @@ class DependencyContainer {
     // MARK: - Persistent Storage
     lazy var planRealmStorage: Storage = PlanRealmStorage(dtoMapper: planDtoMapper)
     
+    // MARK: - Notification
+    func makeNotificationCenter() -> PlanNotificationCenter {
+        return DefaultPlanNotificationCenter()
+    }
+    
+    // MARK: - Repository
+    func makePlanRepository() -> PlanRepository {
+        return DefaultPlanRepository(storage: planRealmStorage,
+                                     notificationCenter: makeNotificationCenter())
+    }
     
     // MARK: - UseCase
     func makeFetchPlanListByDateUseCase() -> FetchPlanListByDateUseCase {
@@ -31,11 +41,6 @@ class DependencyContainer {
     
     func makeDeletePlanUseCase() -> DeletePlanUseCase {
         return DefaultDeletePlanUseCase(repository: makePlanRepository())
-    }
-    
-    // MARK: - Repository
-    func makePlanRepository() -> PlanRepository {
-        return DefaultPlanRepository(storage: planRealmStorage)
     }
     
     // MARK: - PlanListView

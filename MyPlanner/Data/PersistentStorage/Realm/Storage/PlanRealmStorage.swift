@@ -121,6 +121,7 @@ extension PlanRealmStorage {
         plan.date = dto.date
         plan.color = dto.color
         plan.notification = dto.notification
+        plan.notificationId = dto.notificationId
         plan.achieve = dto.achieve
         
         return plan

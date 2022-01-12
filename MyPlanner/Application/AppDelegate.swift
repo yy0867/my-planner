@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,13 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    let dependencyContainer = DependencyContainer()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Realm.Configuration.defaultConfiguration = .init(schemaVersion: 2)
         print(RealmStorage.shared.realmPath())
+        
+//        let config = Realm.Configuration(schemaVersion: 2) { migration, oldSchemaVersion in
+//            if (oldSchemaVersion < 2) {
+//                migration.enumerateObjects(ofType: RealmPlan.className()) { oldObject, newObject in
+//                    newObject!["notificationId"] = ""
+//                }
+//            }
+//        }
 //
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController = dependencyContainer.makePlanListViewController()
-//
+//        Realm.Configuration.defaultConfiguration = config
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
+        
         return true
     }
 
@@ -41,3 +52,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .sound])
+    }
+}

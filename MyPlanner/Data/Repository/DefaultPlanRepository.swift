@@ -10,18 +10,25 @@ import Foundation
 class DefaultPlanRepository: PlanRepository {
     
     let storage: Storage
+    let notificationCenter: PlanNotificationCenter
     let dtoMapper: PlanDtoMapper
     
-    init(storage: Storage) {
+    init(storage: Storage,
+         notificationCenter: PlanNotificationCenter) {
         self.storage = storage
+        self.notificationCenter = notificationCenter
         self.dtoMapper = storage.dtoMapper
     }
     
     func create(dto: PlanDto.Create,
                 completion: (Result<Plan, Error>) -> Void) {
-        storage.create(dto: dto) { result in
+        var dtoWithNotification = dto
+        notificationCenter.createNotification(of: &dtoWithNotification)
+        
+        storage.create(dto: dtoWithNotification) { result in
             switch result {
                 case .success(let dtoResult):
+                    
                     let plan = dtoMapper.asModel(dtoResult: dtoResult)
                     completion(.success(plan))
                 case .failure(let e):
@@ -47,9 +54,13 @@ class DefaultPlanRepository: PlanRepository {
     
     func update(dto: PlanDto.Update,
                 completion: (Result<Plan, Error>) -> Void) {
-        storage.update(dto: dto) { result in
+        var dtoWithNotification = dto
+        notificationCenter.updateNotification(of: &dtoWithNotification)
+        
+        storage.update(dto: dtoWithNotification) { result in
             switch result {
                 case .success(let dtoResult):
+                    
                     let plan = dtoMapper.asModel(dtoResult: dtoResult)
                     completion(.success(plan))
                 case .failure(let e):
@@ -59,11 +70,12 @@ class DefaultPlanRepository: PlanRepository {
         }
     }
     
-    func delete(id: Plan.Identifier,
+    func delete(dto: PlanDto.Delete,
                 completion: (Result<Void, Error>) -> Void) {
-        storage.delete(id: id) { result in
+        storage.delete(id: dto.id) { result in
             switch result {
                 case .success(_):
+                    notificationCenter.deleteNotification(of: dto.notificationId)
                     completion(.success(()))
                 case .failure(let e):
                     print(e.localizedDescription)

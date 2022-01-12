@@ -118,6 +118,7 @@ class DefaultEditPlanViewModel: EditPlanViewModel {
                      name: inputTitle.value,
                      date: date,
                      color: inputColor.value,
+                     notificationId: try! planListViewModel.selectedPlan.value()!.notificationId,
                      notification: inputNotification.value,
                      achieve: achieve)
     }

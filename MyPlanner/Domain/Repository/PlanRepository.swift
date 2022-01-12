@@ -18,6 +18,6 @@ protocol PlanRepository {
     func update(dto: PlanDto.Update,
                 completion: (Result<Plan, Error>) -> Void)
     
-    func delete(id: Plan.Identifier,
+    func delete(dto: PlanDto.Delete,
                 completion: (Result<Void, Error>) -> Void)
 }

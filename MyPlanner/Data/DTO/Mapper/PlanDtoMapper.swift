@@ -13,6 +13,7 @@ class PlanDtoMapper: DtoMapper {
         return .init(name: dtoCreate.name,
                      date: dtoCreate.date,
                      color: dtoCreate.color,
+                     notificationId: dtoCreate.notificationId,
                      notification: dtoCreate.notification,
                      achieve: dtoCreate.achieve)
     }
@@ -22,6 +23,7 @@ class PlanDtoMapper: DtoMapper {
                      name: dtoResult.name,
                      date: dtoResult.date,
                      color: dtoResult.color,
+                     notificationId: dtoResult.notificationId,
                      notification: dtoResult.notification,
                      achieve: dtoResult.achieve)
     }
@@ -31,6 +33,7 @@ class PlanDtoMapper: DtoMapper {
                      name: entity.name,
                      date: entity.date,
                      color: entity.color,
+                     notificationId: entity.notificationId,
                      notification: entity.notification,
                      achieve: entity.achieve)
     }

@@ -16,6 +16,7 @@ struct PlanDto {
         let name: String
         let date: Date
         let color: Plan.Color
+        var notificationId: NotificationId
         
         // Optional
         let id: Plan.Identifier
@@ -26,12 +27,14 @@ struct PlanDto {
              name: String,
              date: Date,
              color: Plan.Color,
+             notificationId: NotificationId = "",
              notification: Bool = false,
              achieve: Bool = false) {
             self.id = id
             self.name = name
             self.date = date
             self.color = color
+            self.notificationId = notificationId
             self.notification = notification
             self.achieve = achieve
         }
@@ -56,8 +59,17 @@ struct PlanDto {
         let name: String
         let date: Date
         let color: Plan.Color
+        var notificationId: NotificationId
         let notification: Bool
         let achieve: Bool
+    }
+    
+    // MARK: - PlanDto.Delete
+    struct Delete {
+        
+        // Require
+        let id: Plan.Identifier
+        let notificationId: NotificationId
     }
     
     // MARK: - PlanDto.Result
@@ -67,6 +79,7 @@ struct PlanDto {
         let name: String
         let date: Date
         let color: Plan.Color
+        let notificationId: NotificationId
         let notification: Bool
         let achieve: Bool
     }

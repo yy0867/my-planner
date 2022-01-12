@@ -16,6 +16,7 @@ struct Plan {
     var name: String
     var date: Date
     var color: Color
+    var notificationId: NotificationId = ""
     var notification: Bool
     var achieve: Bool
 }

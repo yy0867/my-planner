@@ -20,7 +20,10 @@ final class DefaultDeletePlanUseCase: DeletePlanUseCase {
     func execute(plan: Plan,
                  completion: () -> Void) {
         
-        repository.delete(id: plan.id) { result in
+        let deleteDto = PlanDto.Delete(id: plan.id,
+                                       notificationId: plan.notificationId)
+        
+        repository.delete(dto: deleteDto) { result in
             switch result {
                 case .success(_):
                     completion()

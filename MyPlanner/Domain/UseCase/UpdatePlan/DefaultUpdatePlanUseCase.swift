@@ -23,6 +23,7 @@ final class DefaultUpdatePlanUseCase: UpdatePlanUseCase {
                                        name: plan.name,
                                        date: plan.date,
                                        color: plan.color,
+                                       notificationId: plan.notificationId,
                                        notification: plan.notification,
                                        achieve: plan.achieve)
         

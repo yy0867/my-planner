@@ -23,6 +23,9 @@ class RealmPlan: Object, Identifiable {
     var color = "#FFFFFF"
     
     @Persisted
+    var notificationId = ""
+    
+    @Persisted
     var notification = false
     
     @Persisted
@@ -72,6 +75,7 @@ extension RealmPlan {
                      name: name,
                      date: date,
                      color: color,
+                     notificationId: notificationId,
                      notification: notification,
                      achieve: achieve)
     }

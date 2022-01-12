@@ -70,6 +70,23 @@ extension Date {
         return formatter.string(from: self)
     }
     
+    func toNotificationDateComponent() -> DateComponents {
+        let calendar = Calendar.autoupdatingCurrent
+        let year = calendar.component(.year, from: self)
+        let month = calendar.component(.month, from: self)
+        let day = calendar.component(.day, from: self)
+        let hour = calendar.component(.hour, from: self)
+        let minute = calendar.component(.minute, from: self)
+        
+        return .init(calendar: .autoupdatingCurrent,
+                     timeZone: .autoupdatingCurrent,
+                     year: year,
+                     month: month,
+                     day: day,
+                     hour: hour,
+                     minute: minute)
+    }
+    
     func createDate() -> Self {
         let calendar = Calendar.current
         
