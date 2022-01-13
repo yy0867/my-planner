@@ -98,7 +98,7 @@ extension PlanRealmStorage {
             }
             
             if let name = dto.name {
-                if !plan.name.contains(name) { return false }
+                if !plan.name.lowercased().contains(name.lowercased()) { return false }
             }
             
             if let date = dto.date {

@@ -30,6 +30,7 @@ protocol SearchPlanViewModelOutput {
     func getDate(at index: Int) -> Date
     func getName(at index: Int) -> String
     func getAchieve(at index: Int) -> Bool
+    func getColorAssets() -> [String]
 }
 
 protocol SearchPlanViewModel: SearchPlanViewModelInput,
@@ -108,5 +109,9 @@ class DefaultSearchPlanViewModel: SearchPlanViewModel {
     
     public func getAchieve(at index: Int) -> Bool {
         return searchResult.value[index].achieve
+    }
+    
+    public func getColorAssets() -> [String] {
+        return Color.getColorAssets()
     }
 }
